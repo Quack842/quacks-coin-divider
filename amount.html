@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <script src="https://kit.fontawesome.com/a8fb30ffb7.js" crossorigin="anonymous"></script>
+    
+    <title>Quack's Coin Divider</title>
+</head>
+<body class="container">
+    <div class="top-div">
+        <h1 class="main-header">What is The total amount of coins?</h1>
+    </div>
+    <br>
+    <!-- First Section of Discription -->
+    <section class="row">
+        <!-- Platinum -->
+        <div class="col">
+            <label for="platinum" style="color:#cacaca ;">Platinum</label> 
+            <img style="width: 15px;" src="assets/images/platinum.png" alt="platinum coin"> <br>
+            <input type="number" id="platinum">
+        </div>
+        <!-- Electrum -->
+        <div class="col">
+            <label for="electrum" style="color:#cacaca ;">Electrum</label>
+            <img style="width: 15px;" src="assets/images/electrum.png" alt="electrum coin"> <br>
+            <input type="number" id="electrum">
+        </div>
+        <!-- Gold -->
+        <div class="col">
+            <label for="gold" style="color:#cacaca ;">Gold</label>
+            <img style="width: 15px;" src="assets/images/gold.png" alt="gold coin"> <br>
+            <input type="number" id="gold">
+        </div>
+        <!-- Silver -->
+        <div class="col">
+            <label for="silver" style="color:#cacaca ;">Silver</label>
+            <img style="width: 15px;" src="assets/images/silver.png" alt="silver coin"> <br>
+            <input type="number" id="silver">
+        </div>
+        <!-- Copper -->
+        <div class="col">
+            <label for="copper" style="color:#cacaca ;">Copper</label> 
+            <img style="width: 15px;" src="assets/images/copper.png" alt="copper coin"> <br>
+            <input type="number" id="copper">
+        </div>
+    </section>
+    <button class="start-button" onclick="addPlayer()" id="player">Calculate</button>
+    <br>
+    <hr>
+    <!-- Table With Divided amongst Players -->
+    <section>
+
+    </section>
+    <!-- Undivided Section -->
+    <section>
+        <h1 class="main-header">Undivided Amount</h1>
+        <div class="row">
+
+        <!-- Platinum -->
+        <div class="col">
+            <label for="platinum" style="color:#cacaca ;">Platinum</label> 
+            <img style="width: 15px;" src="assets/images/platinum.png" alt="platinum coin"> <br>
+            <input type="number" id="platinum">
+        </div>
+        <!-- Electrum -->
+        <div class="col">
+            <label for="electrum" style="color:#cacaca ;">Electrum</label>
+            <img style="width: 15px;" src="assets/images/electrum.png" alt="electrum coin"> <br>
+            <input type="number" id="electrum">
+        </div>
+        <!-- Gold -->
+        <div class="col">
+            <label for="gold" style="color:#cacaca ;">Gold</label>
+            <img style="width: 15px;" src="assets/images/gold.png" alt="gold coin"> <br>
+            <input type="number" id="gold">
+        </div>
+        <!-- Silver -->
+        <div class="col">
+            <label for="silver" style="color:#cacaca ;">Silver</label>
+            <img style="width: 15px;" src="assets/images/silver.png" alt="silver coin"> <br>
+            <input type="number" id="silver">
+        </div>
+        <!-- Copper -->
+        <div class="col">
+            <label for="copper" style="color:#cacaca ;">Copper</label> 
+            <img style="width: 15px;" src="assets/images/copper.png" alt="copper coin"> <br>
+            <input type="number" id="copper">
+        </div>
+        </div>
+    </section>
+    <section class="button-section">
+        <a class="start-button" onclick="history.back()">Back</a>
+        <a class="start-button" href="./amount.html">Click to Roll Digitally</a>
+    </section>
+    <br>
+    <!-- Script File Link -->
+    <script href="assets/js/script.js"></script>
+</body>
+</html>

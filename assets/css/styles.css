@@ -24,7 +24,7 @@ body {
 
 .main-header {
     font-family: "Eagle Lake", sans-serif;
-    color: rgb(202, 202, 202);
+    color: #cacaca;
     font-size: 2.5vw;
 }
 
@@ -56,10 +56,49 @@ body .card-header {
     padding: 10px 20px 10px 20px;
     text-decoration: none;
     border: 2.5px solid #b59100;
+    margin: 20px 0;
 }
 
 .start-button:hover {
   background: #f24e4e;
   background-image: linear-gradient(to bottom, #f24e4e, #424141);
   text-decoration: none;
+  color: #ffffff;
+}
+
+.button-section {
+    display: inline-block;
+    margin: 20px 0;
+}
+
+@media screen and (max-width: 770px) {
+    .main-header {
+        font-size: 100%;
+    }
+
+    .start-button {
+        font-size: 100%;
+    }
+}
+
+/* Player Page */
+.player-colomn {
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.player-edit {
+    border: none;
+    background-color: transparent;
+}
+
+section .col-4 {
+    display: inline-block;
+    margin: auto;
+    padding: 15px;
+}
+
+section h2 {
+    margin: 0 auto;
+    vertical-align: middle;
 }
