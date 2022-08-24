@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Eagle+Lake&family=Meera+Inimai&family=Prosto+One&display=swap');
+
+body {
+    background-color: #1b1b1b;
+    font-family: "Meera Inimai", sans-serif;
+}
+/* The Top Section of Index  */
+.container {
+    text-align: center;
+}
+.top-div {
+    margin: 10px;
+    margin-top: 40px;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+    height: auto;
+}
+
+.top-div img {
+    width: 70%;
+    height: auto;
+}
+
+.main-header {
+    font-family: "Eagle Lake", sans-serif;
+    color: rgb(202, 202, 202);
+    font-size: 2.5vw;
+}
+
+body .card {
+    width: 80%;
+    height: auto;
+    margin: auto;
+    align-content: center;
+    margin-top: 20px;
+}
+
+body .card-header {
+    font-family: 'Prosto One', sans-serif;
+}
+
+.card-body img {
+    width: 40%;
+    text-align: center;
+    margin: auto;
+}
+
+.start-button {
+    font-family: 'Prosto One', sans-serif;
+    background: #e60000;
+    background-image: linear-gradient(to bottom, #e60000, #030000);
+    border-radius: 28px;
+    color: #ffffff;
+    font-size: 32px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    border: 2.5px solid #b59100;
+}
+
+.start-button:hover {
+  background: #f24e4e;
+  background-image: linear-gradient(to bottom, #f24e4e, #424141);
+  text-decoration: none;
+}
