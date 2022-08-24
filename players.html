@@ -16,29 +16,20 @@
     <div class="top-div">
         <h1 class="main-header">How Many Players Are There?</h1>
         <br>
-        <button class="start-button" onclick="addPlayer()" id="player">Add Player</button>
+        <button class="start-button" id="player" onclick="addPlayer()">Add Player</button>
+        <p style="color: white;">Click on Player Name to edit name</p>
     </div>
     <br>
     <!-- First Section of Discription -->
-    <section onclick="playerList()">
-        <div class="row player-colomn">
-            <div class="col-4" style="text-align: left;">
-                <h2><span>Player 1</span></h2>
-            </div>
-            <div class="col-4"></div>
-            <div class="col-4" style="text-align: right;">
-                <button class="player-edit" onclick="editPlayer()"><i class="fa-solid fa-pen-to-square"></i></button>
-                <button class="player-edit" onclick="deletePlayer()"><i class="fa-solid fa-trash-can"></i></button>
-            </div>
-        </div>
+    <section id="player-list">
     </section>
     <br>
     <section class="button-section">
         <a class="start-button" onclick="history.back()">Back</a>
-        <a class="start-button" href="./players.html">Next</a>
+        <a class="start-button" href="./amount.html">Next</a>
     </section>
     <br>
     <!-- Script File Link -->
-    <script href="assets/js/script.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>

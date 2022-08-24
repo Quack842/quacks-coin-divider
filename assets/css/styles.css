@@ -64,6 +64,7 @@ body .card-header {
   background-image: linear-gradient(to bottom, #f24e4e, #424141);
   text-decoration: none;
   color: #ffffff;
+  cursor: pointer;
 }
 
 .button-section {
@@ -85,6 +86,7 @@ body .card-header {
 .player-colomn {
     background-color: #fff;
     border-radius: 10px;
+    margin: 10px 0;
 }
 
 .player-edit {
