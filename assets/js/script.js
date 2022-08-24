@@ -1,3 +1,5 @@
+let value = [""];
+
 function addPlayer() {
     let div = document.createElement('div');
     div.className = 'row player-colomn';
@@ -5,7 +7,7 @@ function addPlayer() {
     div.innerHTML = `
     <div class="row player-colomn">
         <div class="col-4" style="text-align: left;">
-            <h2><input type="text" value="Player" style="border: none;"></h2>
+            <h2><input type="text" value="Player" name="array[]" style="border: none;"></h2>
         </div>
         <div class="col-4"></div>
         <div class="col-4" style="text-align: right;">
@@ -15,3 +17,5 @@ function addPlayer() {
 
     document.getElementById('player-list').appendChild(div);
 }
+
+
