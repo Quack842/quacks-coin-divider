@@ -5,9 +5,9 @@ function addPlayer() {
     div.className = 'row player-colomn';
 
     div.innerHTML = `
-    <div class="row player-colomn">
+    <div class="row player-colomn" id="player-colomns">
         <div class="col-4" style="text-align: left;">
-            <h2><input type="text" value="Player" name="array[]" style="border: none;"></h2>
+            <h2><input type="text" value="Player" name="array[]" style="border: none;" required></h2>
         </div>
         <div class="col-4"></div>
         <div class="col-4" style="text-align: right;">
@@ -16,6 +16,13 @@ function addPlayer() {
     </div>`;
 
     document.getElementById('player-list').appendChild(div);
+}
+
+function deletePlayer(event) {
+    let del = document.getElementById('player-colomns');
+
+    del.remove();
+
 }
 
 
