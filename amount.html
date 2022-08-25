@@ -15,6 +15,7 @@
 <body class="container">
     <div class="top-div">
         <h1 class="main-header">What is The total amount of coins?</h1>
+        <h4 style="color: #cacaca;">Insert the total amount of coins you looted from the monster/creatures.</h4>
     </div>
     <br>
     <!-- First Section of Discription -->
@@ -50,18 +51,22 @@
             <input type="number" id="copper">
         </div>
     </section>
-    <button class="start-button" onclick="addPlayer()" id="player">Calculate</button>
+    <button class="start-button" id="calculate">Calculate</button>
     <br>
     <hr>
     <!-- Table With Divided amongst Players -->
-    <section id="values">
-        
+    <section id="users-values">
+
     </section>
     <!-- Undivided Section -->
     <section>
-        <h1 class="main-header">Undivided Amount</h1>
-        <div class="row">
+        <div class="top-div">
+            <h1 class="main-header">Undivided Amount</h1>
+            <h4 style="color: #cacaca;">You can either put the remaining amount in a kitty or the players can roll for the remaining coins.</h4>
+            <br>
+        </div>
 
+        <div class="row">
         <!-- Platinum -->
         <div class="col">
             <label for="platinum" style="color:#cacaca ;">Platinum</label> 
