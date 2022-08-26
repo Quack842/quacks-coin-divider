@@ -1,5 +1,4 @@
-let playerArray = ["A", "B"];
-let nameInput = document.getElementById('player-name');
+var playerArray = [];
 let userValue = document.getElementById('users-values');
 let platinumInput = document.getElementById('platinum');
 let electrumInput = document.getElementById('electrum');
@@ -9,35 +8,60 @@ let copperInput = document.getElementById('copper');
 
  // Script to add players when button is clicked.
 function addPlayer() {
+
+    if(playerArray.length == 0) {
+        console.log('Array empty');
+    }
+    let nm = playerArray.length.toString();
+
+    playerArray.push('Player'+nm);
+
     let div = document.createElement('div');
     div.className = 'row player-colomn';
 
     div.innerHTML = `
     <div class="row player-colomn" id="player-colomns">
         <div class="col-4" style="text-align: left;">
-            <h2><input id="player-name" type="text" placeholder="Player" class="player-edit"></h2>
+            <h2><input id="player-name${nm}" type="text" placeholder="Player ${nm}" class="player-edit"></h2>
         </div>
         <div class="col-4"></div>
         <div class="col-4" style="text-align: right;">
-            <button class="player-edit" onclick="deletePlayer(this)"><i class="fa-solid fa-trash-can"></i></button>
+            <button class="player-edit" id="button-${nm}" onclick="deletePlayer('player-name${nm}')"><i class="fa-solid fa-trash-can"></i></button>
         </div>
     </div>`;
 
     document.getElementById('player-list').appendChild(div);
 }
 // Removes player when delete icon is clicked.
-function deletePlayer() {
+function deletePlayer(id) {
+    console.log('this: ' + id);
     let del = document.getElementById('player-colomns');
 
     del.remove();
 }
 
-// Inserts user value to An array and shows on next page... hopefully
+// Changes screen view to second section and removes first sections view and Pushes the entered Value to array
 function submitInput() {
-    playerArray.push(nameInput);
 
+    document.getElementById("calculateSection").style.display = "block";
+    document.getElementById("playerSection").style.display = "none";
+
+    let nameInput = document.getElementById(`player-name${nm}`).value;
+    playerArray = JSON.parse(sessionStorage.getItem('players'));
+
+    for (nameInputs of nameInput) {
+        playerArray.push(nameInput);  
+        console.log(playerArray);
+
+    }
+
+    sessionStorage.setItem('players', JSON.stringify(playerArray));
 }
 
+function backPlayer() {
+    document.getElementById("calculateSection").style.display = "none";
+    document.getElementById("playerSection").style.display = "block";
+}
 // Creates The Table When Clicked On Calculate
 function calculateTotal() {
     let html = `
@@ -57,8 +81,8 @@ function calculateTotal() {
     for (playerArrays of playerArray) {
         let rowHtml =  `
         <tr>
-            <td>${playerArrays.nameInput}</td>
-            <td id="platinum-input">${playerArrays.platinumInput}</td>
+            <td>${playerArrays.nameInputs.value}</td>
+            <td id="platinum-input">${playerArrays.platinumInput.value}</td>
             <td id="electrum-input">${playerArrays.electrumInput}</td>
             <td id="gold-input">${playerArrays.goldInput}</td>
             <td id="silver-input">${playerArrays.silverInput}</td>
@@ -73,6 +97,7 @@ function calculateTotal() {
     `;
 
     return html;
+
 }
 let table = calculateTotal();
 document.getElementById('users-values').innerHTML = table;

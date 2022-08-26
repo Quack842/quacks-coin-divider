@@ -13,6 +13,7 @@
     <title>Quack's Coin Divider</title>
 </head>
 <body class="container">
+    <section id="playerSection">
     <div class="top-div">
         <h1 class="main-header">How Many Players Are There?</h1>
         <br>
@@ -22,13 +23,109 @@
     <br>
     <!-- First Section of Discription -->
     <section id="player-list">
+        
     </section>
     <br>
     <section class="button-section">
-        <a class="start-button" onclick="history.back()">Back</a>
-        <a class="start-button" href="./amount.html" onclick="submitInput()">Next</a>
+        <button class="start-button" onclick="history.back()">Back</button>
+        <button class="start-button" onclick="submitInput()">Next</button>
     </section>
     <br>
+    </section>
+
+    <section id="calculateSection" style="display: none;">
+
+        <div class="top-div">
+            <h1 class="main-header">What is The total amount of coins?</h1>
+            <h4 style="color: #cacaca;">Insert the total amount of coins you looted from the monster/creatures.</h4>
+        </div>
+        <br>
+        <!-- First Section of Discription -->
+        <section class="row">
+            <!-- Platinum -->
+            <div class="col">
+                <label for="platinum" style="color:#cacaca ;">Platinum</label> 
+                <img style="width: 15px;" src="assets/images/platinum.png" alt="platinum coin"> <br>
+                <input type="number" id="platinum">
+            </div>
+            <!-- Electrum -->
+            <div class="col">
+                <label for="electrum" style="color:#cacaca ;">Electrum</label>
+                <img style="width: 15px;" src="assets/images/electrum.png" alt="electrum coin"> <br>
+                <input type="number" id="electrum">
+            </div>
+            <!-- Gold -->
+            <div class="col">
+                <label for="gold" style="color:#cacaca ;">Gold</label>
+                <img style="width: 15px;" src="assets/images/gold.png" alt="gold coin"> <br>
+                <input type="number" id="gold">
+            </div>
+            <!-- Silver -->
+            <div class="col">
+                <label for="silver" style="color:#cacaca ;">Silver</label>
+                <img style="width: 15px;" src="assets/images/silver.png" alt="silver coin"> <br>
+                <input type="number" id="silver">
+            </div>
+            <!-- Copper -->
+            <div class="col">
+                <label for="copper" style="color:#cacaca ;">Copper</label> 
+                <img style="width: 15px;" src="assets/images/copper.png" alt="copper coin"> <br>
+                <input type="number" id="copper">
+            </div>
+        </section>
+        <button class="start-button" id="calculate">Calculate</button>
+        <br>
+        <hr>
+        <!-- Table With Divided amongst Players -->
+        <section id="users-values">
+    
+        </section>
+        <!-- Undivided Section -->
+        <section>
+            <div class="top-div">
+                <h1 class="main-header">Undivided Amount</h1>
+                <h4 style="color: #cacaca;">You can either put the remaining amount in a kitty or the players can roll for the remaining coins.</h4>
+                <br>
+            </div>
+    
+            <div class="row">
+            <!-- Platinum -->
+            <div class="col">
+                <label for="platinum" style="color:#cacaca ;">Platinum</label> 
+                <img style="width: 15px;" src="assets/images/platinum.png" alt="platinum coin"> <br>
+                <input type="number" id="platinum">
+            </div>
+            <!-- Electrum -->
+            <div class="col">
+                <label for="electrum" style="color:#cacaca ;">Electrum</label>
+                <img style="width: 15px;" src="assets/images/electrum.png" alt="electrum coin"> <br>
+                <input type="number" id="electrum">
+            </div>
+            <!-- Gold -->
+            <div class="col">
+                <label for="gold" style="color:#cacaca ;">Gold</label>
+                <img style="width: 15px;" src="assets/images/gold.png" alt="gold coin"> <br>
+                <input type="number" id="gold">
+            </div>
+            <!-- Silver -->
+            <div class="col">
+                <label for="silver" style="color:#cacaca ;">Silver</label>
+                <img style="width: 15px;" src="assets/images/silver.png" alt="silver coin"> <br>
+                <input type="number" id="silver">
+            </div>
+            <!-- Copper -->
+            <div class="col">
+                <label for="copper" style="color:#cacaca ;">Copper</label> 
+                <img style="width: 15px;" src="assets/images/copper.png" alt="copper coin"> <br>
+                <input type="number" id="copper">
+            </div>
+            </div>
+        </section>
+        <section class="button-section">
+            <button class="start-button" onclick="backPlayer()">Back</button>
+            <button class="start-button" href="./amount.html">Click to Roll Digitally</button>
+        </section>
+    </section>
     <!-- Script File Link -->
     <script src="assets/js/script.js"></script>
 </body>
