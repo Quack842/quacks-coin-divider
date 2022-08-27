@@ -67,6 +67,7 @@ function deletePlayer(id) {
 // Changes screen view to second section and removes first sections view and Pushes the entered Value to array
 function submitInput() {
     console.log(playerArray);
+    
     document.getElementById("calculateSection").style.display = "block";
     document.getElementById("playerSection").style.display = "none";
 
