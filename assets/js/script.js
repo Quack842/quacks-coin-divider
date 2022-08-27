@@ -6,23 +6,28 @@ let goldInput = document.getElementById('gold');
 let silverInput = document.getElementById('silver');
 let copperInput = document.getElementById('copper');
 
- // Script to add players when button is clicked.
+// Script to add players when button is clicked.
 function addPlayer() {
 
-    if(playerArray.length == 0) {
-        console.log('Array empty');
+    if (playerArray.length == 0) {
+        //console.log('Array empty');
+    } else {
+        //console.log('Items' + playerArray.length);
     }
     let nm = playerArray.length.toString();
+    let p = {
+        id: 'player-name' + nm,
+        name: ''
+    };
 
-    playerArray.push('Player'+nm);
+    playerArray.push(JSON.stringify(p));
 
     let div = document.createElement('div');
-    div.className = 'row player-colomn';
 
     div.innerHTML = `
-    <div class="row player-colomn" id="player-colomns">
+    <div class="row player-colomn" id="player-colomns" name="player-colomns">
         <div class="col-4" style="text-align: left;">
-            <h2><input id="player-name${nm}" type="text" placeholder="Player ${nm}" class="player-edit"></h2>
+            <h2><input id="player-name${nm}" type="text" placeholder="Player Name" class="player-edit" onfocusout="setName('player-name${nm}', this.value)"></h2>
         </div>
         <div class="col-4"></div>
         <div class="col-4" style="text-align: right;">
@@ -34,15 +39,34 @@ function addPlayer() {
 }
 // Removes player when delete icon is clicked.
 function deletePlayer(id) {
-    console.log('this: ' + id);
-    let del = document.getElementById('player-colomns');
+    let element = document.getElementById(id);
+    if (element) {
+        let v = element.value;
+        let arrayId = `{"id":"${id}","name":"${v}"}`;
+        let ind = playerArray.indexOf(arrayId);
+        //console.log("Index " + ind);
 
-    del.remove();
+        if (ind >= 0) {
+            //console.log('Item: ' + playerArray[ind]);
+            playerArray.splice(ind, 1);
+        }
+        //console.log("value" + v);
+
+        // for (let i = 0; i < playerArray.length; i++) {
+        //     console.log("Player: " + playerArray[i]);
+        // }
+        let del = document.getElementsByName('player-colomns');
+        //del.splice(ind, 1);
+        del[ind].remove();
+
+        //console.log("Deleted: " + del);
+    }
+    //del.remove();
 }
 
 // Changes screen view to second section and removes first sections view and Pushes the entered Value to array
 function submitInput() {
-
+    console.log(playerArray);
     document.getElementById("calculateSection").style.display = "block";
     document.getElementById("playerSection").style.display = "none";
 
@@ -50,7 +74,7 @@ function submitInput() {
     playerArray = JSON.parse(sessionStorage.getItem('players'));
 
     for (nameInputs of nameInput) {
-        playerArray.push(nameInput);  
+        playerArray.push(nameInput);
         console.log(playerArray);
 
     }
@@ -79,7 +103,7 @@ function calculateTotal() {
     <tbody>`;
 
     for (playerArrays of playerArray) {
-        let rowHtml =  `
+        let rowHtml = `
         <tr>
             <td>${playerArrays.nameInputs.value}</td>
             <td id="platinum-input">${playerArrays.platinumInput.value}</td>
@@ -89,7 +113,7 @@ function calculateTotal() {
             <td id="copper-input">${playerArrays.copperInput}</td>
         </tr>
     `;
-    html += rowHtml;
+        html += rowHtml;
     }
     html += `
     </tbody>
@@ -101,3 +125,20 @@ function calculateTotal() {
 }
 let table = calculateTotal();
 document.getElementById('users-values').innerHTML = table;
+
+
+// Function to set name on focus out
+function setName(id, value) {
+    //console.log("Id: " + id + " Value: " + value);
+    let nameVal = `{"id":"${id}","name":"${value}"}`;
+    let searchVal = `{"id":"${id}",`;
+
+    for (let i = 0; i < playerArray.length; i++) {
+        //console.log("Array Value" + playerArray + "Blafnk" + searchVal);
+        if (playerArray[i].startsWith(searchVal)) {
+            //console.log("Item: " + nameVal);
+
+            playerArray.splice(i, 1, nameVal);
+        }
+    }
+}

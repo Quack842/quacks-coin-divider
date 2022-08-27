@@ -83,9 +83,10 @@ body .card-header {
 }
 
 /* Player Page */
-.player-colomn {
+#player-colomns {
     background-color: #fff;
     border-radius: 10px;
+    padding: 5px;
     margin: 10px 0;
 }
 
