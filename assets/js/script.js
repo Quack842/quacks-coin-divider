@@ -1,10 +1,5 @@
 var playerArray = [];
 let userValue = document.getElementById('users-values');
-let platinumInput = document.getElementById('platinum');
-let electrumInput = document.getElementById('electrum');
-let goldInput = document.getElementById('gold');
-let silverInput = document.getElementById('silver');
-let copperInput = document.getElementById('copper');
 let form = document.getElementById('form-submit');
 
 // Prevent form from refreshing page after submit
@@ -97,6 +92,18 @@ function backPlayer() {
 
 // Creates The Table When Clicked On Calculate
 function calculateTotal() {
+    let platinumInput = parseInt(document.getElementById('platinum').value);
+    let electrumInput = parseInt(document.getElementById('electrum').value);
+    let goldInput = parseInt(document.getElementById('gold').value);
+    let silverInput = parseInt(document.getElementById('silver').value);
+    let copperInput = parseInt(document.getElementById('copper').value);
+
+    console.log("Platinum Value " + platinumInput);
+    console.log("Electrum Value " + electrumInput);
+    console.log("Gold Value " + goldInput);
+    console.log("Silver Value " + silverInput);
+    console.log("Copper Value " + copperInput);
+
     let html = `
     <table class="table table-dark" id="user-table">
     <thead>
@@ -119,11 +126,11 @@ function calculateTotal() {
         let rowHtml = `
         <tr>
             <td>${plr.name}</td>
-            <td id="platinum-input">0</td>
-            <td id="electrum-input">0</td>
-            <td id="gold-input">0</td>
-            <td id="silver-input">0</td>
-            <td id="copper-input">0</td>
+            <td id="platinum-input">${platinumInput / playerArray.length}</td>
+            <td id="electrum-input">${electrumInput / playerArray.length}</td>
+            <td id="gold-input">${goldInput / playerArray.length}</td>
+            <td id="silver-input">${silverInput / playerArray.length}</td>
+            <td id="copper-input">${copperInput / playerArray.length}</td>
         </tr>
     `;
     html += rowHtml;
@@ -133,7 +140,6 @@ function calculateTotal() {
     </tbody>
     </table>
     `;
-    console.log("tble found: " + html);
 
     document.getElementById('users-values').innerHTML = html;
     return html;
