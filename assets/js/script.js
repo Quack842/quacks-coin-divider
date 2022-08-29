@@ -98,12 +98,6 @@ function calculateTotal() {
     let silverInput = parseInt(document.getElementById('silver').value);
     let copperInput = parseInt(document.getElementById('copper').value);
 
-    console.log("Platinum Value " + platinumInput);
-    console.log("Electrum Value " + electrumInput);
-    console.log("Gold Value " + goldInput);
-    console.log("Silver Value " + silverInput);
-    console.log("Copper Value " + copperInput);
-
     let html = `
     <table class="table table-dark" id="user-table">
     <thead>
@@ -121,7 +115,6 @@ function calculateTotal() {
     if (playerArray ){
     for (player of playerArray) {
         let plr = JSON.parse(player);
-        console.log("Found " + player + ": " + plr.name);
 
         let rowHtml = `
         <tr>
