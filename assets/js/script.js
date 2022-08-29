@@ -61,7 +61,6 @@ function deletePlayer(id) {
 
         //console.log("Deleted: " + del);
     }
-    //del.remove();
 }
 
 // Changes screen view to second section and removes first sections view and Pushes the entered Value to array
@@ -87,6 +86,7 @@ function backPlayer() {
     document.getElementById("calculateSection").style.display = "none";
     document.getElementById("playerSection").style.display = "block";
 }
+
 // Creates The Table When Clicked On Calculate
 function calculateTotal() {
     let html = `
@@ -106,7 +106,7 @@ function calculateTotal() {
     for (playerArrays of playerArray) {
         let rowHtml = `
         <tr>
-            <td>${playerArrays.nameInputs.value}</td>
+            <td>${playerArrays.userValue.value}</td>
             <td id="platinum-input">${playerArrays.platinumInput.value}</td>
             <td id="electrum-input">${playerArrays.electrumInput}</td>
             <td id="gold-input">${playerArrays.goldInput}</td>
@@ -120,9 +120,7 @@ function calculateTotal() {
     </tbody>
     </table>
     `;
-
     return html;
-
 }
 let table = calculateTotal();
 document.getElementById('users-values').innerHTML = table;
@@ -135,7 +133,7 @@ function setName(id, value) {
     let searchVal = `{"id":"${id}",`;
 
     for (let i = 0; i < playerArray.length; i++) {
-        //console.log("Array Value" + playerArray + "Blafnk" + searchVal);
+        //console.log("Array Value" + playerArray + "blank" + searchVal);
         if (playerArray[i].startsWith(searchVal)) {
             //console.log("Item: " + nameVal);
 
