@@ -5,6 +5,13 @@ let electrumInput = document.getElementById('electrum');
 let goldInput = document.getElementById('gold');
 let silverInput = document.getElementById('silver');
 let copperInput = document.getElementById('copper');
+let form = document.getElementById('form-submit');
+
+// Prevent form from refreshing page after submit
+function handleSubmit(event) { 
+    event.preventDefault(); 
+}
+form.addEventListener('submit', handleSubmit);
 
 // Script to add players when button is clicked.
 function addPlayer() {
@@ -27,7 +34,7 @@ function addPlayer() {
     div.innerHTML = `
     <div class="row player-colomn" id="player-colomns" name="player-colomns">
         <div class="col-4" style="text-align: left;">
-            <h2><input id="player-name${nm}" type="text" placeholder="Player Name" class="player-edit" onfocusout="setName('player-name${nm}', this.value)"></h2>
+            <h2><input id="player-name${nm}" type="text" placeholder="Player Name" class="player-edit" name="player-input" onfocusout="setName('player-name${nm}', this.value)" required></h2>
         </div>
         <div class="col-4"></div>
         <div class="col-4" style="text-align: right;">
@@ -65,21 +72,22 @@ function deletePlayer(id) {
 
 // Changes screen view to second section and removes first sections view and Pushes the entered Value to array
 function submitInput() {
-    console.log(playerArray);
+    let playerInputs = document.getElementsByName('player-input');
+    let valCheck = true;
+    
+    for (let i = 0; i < playerInputs.length; i++) {
+        if(!playerInputs[i].checkValidity()){
+            valCheck = false;
+            break;
+        }
+    }
+    if (!valCheck) {
+        return;
+    }
     
     document.getElementById("calculateSection").style.display = "block";
     document.getElementById("playerSection").style.display = "none";
 
-    let nameInput = document.getElementById(`player-name${nm}`).value;
-    playerArray = JSON.parse(sessionStorage.getItem('players'));
-
-    for (nameInputs of nameInput) {
-        playerArray.push(nameInput);
-        console.log(playerArray);
-
-    }
-
-    sessionStorage.setItem('players', JSON.stringify(playerArray));
 }
 
 function backPlayer() {
@@ -103,28 +111,33 @@ function calculateTotal() {
     </thead>
     <tbody>`;
 
-    for (playerArrays of playerArray) {
+    if (playerArray ){
+    for (player of playerArray) {
+        let plr = JSON.parse(player);
+        console.log("Found " + player + ": " + plr.name);
+
         let rowHtml = `
         <tr>
-            <td>${playerArrays.userValue.value}</td>
-            <td id="platinum-input">${playerArrays.platinumInput.value}</td>
-            <td id="electrum-input">${playerArrays.electrumInput}</td>
-            <td id="gold-input">${playerArrays.goldInput}</td>
-            <td id="silver-input">${playerArrays.silverInput}</td>
-            <td id="copper-input">${playerArrays.copperInput}</td>
+            <td>${plr.name}</td>
+            <td id="platinum-input">0</td>
+            <td id="electrum-input">0</td>
+            <td id="gold-input">0</td>
+            <td id="silver-input">0</td>
+            <td id="copper-input">0</td>
         </tr>
     `;
-        html += rowHtml;
+    html += rowHtml;
     }
+}
     html += `
     </tbody>
     </table>
     `;
+    console.log("tble found: " + html);
+
+    document.getElementById('users-values').innerHTML = html;
     return html;
 }
-let table = calculateTotal();
-document.getElementById('users-values').innerHTML = table;
-
 
 // Function to set name on focus out
 function setName(id, value) {

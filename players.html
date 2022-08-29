@@ -22,17 +22,19 @@
     </div>
     <br>
     <!-- First Section of Discription -->
+    <form id="form-submit">
     <section id="player-list">
-        
+
     </section>
     <br>
     <section class="button-section">
         <button class="start-button" onclick="history.back()">Back</button>
-        <button class="start-button" onclick="submitInput()">Next</button>
+        <button class="start-button" type="submit" id="btn-submit" onclick="submitInput()">Next</button>
     </section>
+    </form>
     <br>
     </section>
-
+    <!-- Second Section Viewed When Next Clicked-->
     <section id="calculateSection" style="display: none;">
 
         <div class="top-div">
@@ -73,7 +75,7 @@
                 <input type="number" id="copper">
             </div>
         </section>
-        <button class="start-button" id="calculate">Calculate</button>
+        <button class="start-button" id="calculate" onclick="calculateTotal()">Calculate</button>
         <br>
         <hr>
         <!-- Table With Divided amongst Players -->
