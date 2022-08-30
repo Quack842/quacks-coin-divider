@@ -78,6 +78,7 @@
         <button class="start-button" id="calculate" onclick="calculateTotal()">Calculate</button>
         <br>
         <h1 class="main-header">Divided Coins Bewteen Players</h1>
+        <hr>
         <!-- Table With Divided amongst Players -->
         <section id="users-values">
     
@@ -125,8 +126,27 @@
         </section>
         <section class="button-section">
             <button class="start-button" onclick="backPlayer()">Back</button>
-            <button class="start-button" href="./amount.html">Click to Roll Digitally</button>
+            <button class="start-button" onclick="submitRollInput()">Click to Roll Digitally</button>
         </section>
+    </section>
+
+    <!-- Third Section Viewed When Next Clicked-->
+    <section id="playerRollSection" style="display: none;">
+        <div class="top-div">
+            <h1 class="main-header">Click On the Die 20 Image to roll a number bewteen 1 and 20.</h1>
+        </div>
+        <br>
+        <hr>
+        <!-- First Section of Roll -->
+        <section id="roll-section">
+    
+        </section>
+        <section class="button-section">
+            <button class="start-button" onclick="backRollPlayer()">Back</button>
+            <!-- When this button is clicked, it will take them back to the start and reset everything -->
+            <button class="start-button"><a href="./index.html" onclick="reset()">Reset Everything!</a></button>
+        </section>
+        <br>
     </section>
     <!-- Script File Link -->
     <script src="assets/js/script.js"></script>

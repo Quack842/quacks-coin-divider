@@ -105,3 +105,27 @@ section h2 {
     margin: 0 auto;
     vertical-align: middle;
 }
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: white;
+}
+
+/* Amount Page style */
+.roll-style {
+    background-color: #fff;
+    border-radius: 10px;
+    height: auto;
+    width: 80%;
+}
+
+.die-image {
+    width: 30px;
+    height: auto;
+    margin: 5px;
+    padding: 0;
+    float: right;
+}

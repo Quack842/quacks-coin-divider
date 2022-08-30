@@ -52,16 +52,10 @@ function deletePlayer(id) {
             //console.log('Item: ' + playerArray[ind]);
             playerArray.splice(ind, 1);
         }
-        //console.log("value" + v);
 
-        // for (let i = 0; i < playerArray.length; i++) {
-        //     console.log("Player: " + playerArray[i]);
-        // }
         let del = document.getElementsByName('player-colomns');
         //del.splice(ind, 1);
         del[ind].remove();
-
-        //console.log("Deleted: " + del);
     }
 }
 
@@ -82,12 +76,27 @@ function submitInput() {
     
     document.getElementById("calculateSection").style.display = "block";
     document.getElementById("playerSection").style.display = "none";
+    document.getElementById("playerRollSection").style.display = "none";
 
+}
+
+function submitRollInput() {
+
+    document.getElementById("calculateSection").style.display = "none";
+    document.getElementById("playerSection").style.display = "none";
+    document.getElementById("playerRollSection").style.display = "block";
 }
 
 function backPlayer() {
     document.getElementById("calculateSection").style.display = "none";
     document.getElementById("playerSection").style.display = "block";
+    document.getElementById("playerRollSection").style.display = "none";
+}
+
+function backRollPlayer() {
+    document.getElementById("calculateSection").style.display = "block";
+    document.getElementById("playerSection").style.display = "none";
+    document.getElementById("playerRollSection").style.display = "none";
 }
 
 // Creates The Table When Clicked On Calculate
@@ -102,12 +111,12 @@ function calculateTotal() {
     <table class="table table-light" id="user-table">
     <thead>
       <tr>
-        <th scope="col">Players</th>
-        <th scope="col">Platinum</th>
-        <th scope="col">Electrum</th>
-        <th scope="col">Gold</th>
-        <th scope="col">Silver</th>
-        <th scope="col">Copper</th>
+        <th scope="col" style="border-radius: 10px 0 0 0;">Players</th>
+        <th scope="col" style="color: #636464;">Platinum</th>
+        <th scope="col"style="color: #055160;">Electrum</th>
+        <th scope="col"style="color: #a47c04;">Gold</th>
+        <th scope="col"style="color: #adb5bd;">Silver</th>
+        <th scope="col"style="color: #664d03; border-radius: 0 10px 0 0;">Copper</th>
       </tr>
     </thead>
     <tbody>`;
@@ -173,3 +182,20 @@ function setName(id, value) {
         }
     }
 }
+
+// Creates and shows the players that was entered.
+let sectionRoll = `
+    <div class="row roll-style">
+        <div class="col">
+            <h4>${plr.name}</h4>
+        </div>
+        <div class="col">17</div>
+        <div class="col">
+            <button onclick="rollDie()">
+                <img src="assets/images/dice20.png" class="die-image">
+            </button>
+        </div>
+    </div>
+`;
+
+document.getElementById('roll-section').innerHTML = sectionRoll;
