@@ -184,10 +184,14 @@ function setName(id, value) {
 }
 
 // Creates and shows the players that was entered.
-let sectionRoll = `
-    <div class="row roll-style">
+function playerRollView() {
+
+    let div = document.createElement('div');
+
+    div.innerHTML = `
+    <div class="row player-colomn" id="roll-style">
         <div class="col">
-            <h4>${plr.name}</h4>
+            <h2>${plr.name}</h2>
         </div>
         <div class="col">17</div>
         <div class="col">
@@ -196,6 +200,7 @@ let sectionRoll = `
             </button>
         </div>
     </div>
-`;
-
-document.getElementById('roll-section').innerHTML = sectionRoll;
+    `;
+    
+    document.getElementById('roll-section').appendChild(div);
+}

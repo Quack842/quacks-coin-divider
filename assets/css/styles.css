@@ -115,11 +115,23 @@ a:hover {
 }
 
 /* Amount Page style */
-.roll-style {
+#roll-style {
     background-color: #fff;
     border-radius: 10px;
     height: auto;
-    width: 80%;
+    width: 100%;
+    margin: auto;
+}
+
+#roll-style h2 {
+    margin: 0 auto;
+    vertical-align: middle;
+}
+
+#roll-style .col {
+    display: inline-block;
+    margin: auto;
+    padding: 15px;
 }
 
 .die-image {
