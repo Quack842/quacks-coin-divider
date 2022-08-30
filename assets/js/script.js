@@ -76,7 +76,6 @@ function submitInput() {
 }
 
 function submitRollInput() {
-
     document.getElementById("calculateSection").style.display = "none";
     document.getElementById("playerSection").style.display = "none";
     document.getElementById("playerRollSection").style.display = "block";
@@ -181,6 +180,9 @@ function setName(id, value) {
 // Creates and shows the players that was entered.
 function playerRollView() {
 
+    // This function will roll a random number between 1 and 20
+    let numRoll = Math.floor(Math.random() * 20) + 1;
+
     let div = document.createElement('div');
     if (playerArray) {
         for (player of playerArray) {
@@ -191,7 +193,7 @@ function playerRollView() {
                 <div class="col">
                     <h2 style="float: left; margin: auto;">${plr.name}</h2>
                 </div>
-                <div class="col" style="font-family: 'Eagle Lake', sans-serif;"><input type="text" id="rolled" name="rolled" disabled /></div>
+                <div class="col" style="font-family: 'Eagle Lake', sans-serif;"><input type="text" id="rolled" name="rolled" disabled value="${num}" /></div>
                 <div class="col">
                     <button onclick="rollDie()">
                         <img src="assets/images/dice20.png" class="die-image">
@@ -201,14 +203,12 @@ function playerRollView() {
         }
     }
     document.getElementById('roll-section').appendChild(div);
-
-    // This function will roll a random number between 1 and 20
-    let numRoll = Math.floor(Math.random() * 20) + 1;
-    document.getElementById('rolled').value = numRoll;
 }
 
 // If a player want's to reroll
 function rollDie() {
-    let numRoll = Math.floor(Math.random() * 20) + 1;
+    let numRoll = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"];
+    let num = Math.floor(Math.random() * numRoll.length);
+
     document.getElementById('rolled').value = numRoll;
 }
