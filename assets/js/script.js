@@ -99,7 +99,7 @@ function calculateTotal() {
     let copperInput = parseInt(document.getElementById('copper').value);
 
     let html = `
-    <table class="table table-dark" id="user-table">
+    <table class="table table-light" id="user-table">
     <thead>
       <tr>
         <th scope="col">Players</th>
@@ -119,11 +119,11 @@ function calculateTotal() {
         let rowHtml = `
         <tr>
             <td>${plr.name}</td>
-            <td id="platinum-input">${platinumInput / playerArray.length}</td>
-            <td id="electrum-input">${electrumInput / playerArray.length}</td>
-            <td id="gold-input">${goldInput / playerArray.length}</td>
-            <td id="silver-input">${silverInput / playerArray.length}</td>
-            <td id="copper-input">${copperInput / playerArray.length}</td>
+            <td id="platinum-input">${Math.floor(platinumInput / playerArray.length)}</td>
+            <td id="electrum-input">${Math.floor(electrumInput / playerArray.length)}</td>
+            <td id="gold-input">${Math.floor(goldInput / playerArray.length)}</td>
+            <td id="silver-input">${Math.floor(silverInput / playerArray.length)}</td>
+            <td id="copper-input">${Math.floor(copperInput / playerArray.length)}</td>
         </tr>
     `;
     html += rowHtml;
@@ -135,6 +135,26 @@ function calculateTotal() {
     `;
 
     document.getElementById('users-values').innerHTML = html;
+
+    //Calculates the Remainder
+    let platinumRemain = platinumInput % playerArray.length;
+    let electruumRemain = electrumInput % playerArray.length;
+    let goldRemain = goldInput % playerArray.length;
+    let silverRemain = silverInput % playerArray.length;
+    let copperRemain = copperInput % playerArray.length;
+
+    let platinumSpan = `<h4 style="color: white; font-family: 'Eagle Lake', sans-serif;">${platinumRemain}</h4>`;
+    let electrumSpan = `<h4 style="color: white; font-family: 'Eagle Lake', sans-serif;">${electruumRemain}</h4>`;
+    let goldSpan = `<h4 style="color: white; font-family: 'Eagle Lake', sans-serif;">${goldRemain}</h4>`;
+    let silverSpan = `<h4 style="color: white; font-family: 'Eagle Lake', sans-serif;">${silverRemain}</h4>`;
+    let copperSpan = `<h4 style="color: white; font-family: 'Eagle Lake', sans-serif;">${copperRemain}</h4>`;
+
+    document.getElementById('platinumOver').innerHTML = platinumSpan;
+    document.getElementById('electrumOver').innerHTML = electrumSpan;
+    document.getElementById('goldOver').innerHTML = goldSpan;
+    document.getElementById('silverOver').innerHTML = silverSpan;
+    document.getElementById('copperOver').innerHTML = copperSpan;
+
     return html;
 }
 
