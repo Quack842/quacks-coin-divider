@@ -10,12 +10,6 @@ form.addEventListener('submit', handleSubmit);
 
 // Script to add players when button is clicked.
 function addPlayer() {
-
-    if (playerArray.length == 0) {
-        //console.log('Array empty');
-    } else {
-        //console.log('Items' + playerArray.length);
-    }
     let nm = playerArray.length.toString();
     let p = {
         id: 'player-name' + nm,
@@ -39,6 +33,7 @@ function addPlayer() {
 
     document.getElementById('player-list').appendChild(div);
 }
+
 // Removes player when delete icon is clicked.
 function deletePlayer(id) {
     let element = document.getElementById(id);
@@ -187,20 +182,33 @@ function setName(id, value) {
 function playerRollView() {
 
     let div = document.createElement('div');
-
-    div.innerHTML = `
-    <div class="row player-colomn" id="roll-style">
-        <div class="col">
-            <h2>${plr.name}</h2>
-        </div>
-        <div class="col">17</div>
-        <div class="col">
-            <button onclick="rollDie()">
-                <img src="assets/images/dice20.png" class="die-image">
-            </button>
-        </div>
-    </div>
-    `;
+    if (playerArray) {
+        for (player of playerArray) {
+            let plr = JSON.parse(player);
     
+            div.innerHTML = `
+            <div class="row player-colomn" id="roll-style">
+                <div class="col">
+                    <h2 style="float: left; margin: auto;">${plr.name}</h2>
+                </div>
+                <div class="col" style="font-family: 'Eagle Lake', sans-serif;"><input type="text" id="rolled" name="rolled" disabled /></div>
+                <div class="col">
+                    <button onclick="rollDie()">
+                        <img src="assets/images/dice20.png" class="die-image">
+                    </button>
+                </div>
+            </div>`;
+        }
+    }
     document.getElementById('roll-section').appendChild(div);
+
+    // This function will roll a random number between 1 and 20
+    let numRoll = Math.floor(Math.random() * 20) + 1;
+    document.getElementById('rolled').value = numRoll;
+}
+
+// If a player want's to reroll
+function rollDie() {
+    let numRoll = Math.floor(Math.random() * 20) + 1;
+    document.getElementById('rolled').value = numRoll;
 }

@@ -120,7 +120,7 @@ a:hover {
     border-radius: 10px;
     height: auto;
     width: 100%;
-    margin: auto;
+    margin: 10px 0;
 }
 
 #roll-style h2 {
@@ -134,10 +134,24 @@ a:hover {
     padding: 15px;
 }
 
+#roll-style button {
+    background-color: transparent;
+    border: none;
+    float: right;
+    margin: auto;
+}
+
 .die-image {
     width: 30px;
     height: auto;
     margin: 5px;
     padding: 0;
     float: right;
+}
+
+#rolled {
+  border: none;
+  background-color: transparent;
+  margin: auto;
+  text-align: center;
 }
