@@ -203,42 +203,65 @@ function playerRollView() {
         div = document.createElement('div');
         div.id = 'rolled-results';
     }
-    console.log("div is: " + div.id);
+    //console.log("div is: " + div.id);
     div.innerHTML = '';
 
     if (playerArray) {
         for (player of playerArray) {
+            let bgC = (num == 20) ? "green-back" : "";
+            let bgRed = (num == 1) ? "red-border" : "";
             let plr = JSON.parse(player);
     
             div.innerHTML += `
-            <div class="row player-colomn" id="roll-style">
+            <div class="row player-colomn rl-stl ${bgC} ${bgRed}" id="roll-style-${plr.name}">
                 <div class="col-4">
                     <h2 style="float: left; margin: auto;">${plr.name}</h2>
                 </div>
-                <div class="col-4" style="font-family: 'Eagle Lake', sans-serif;"><input type="text" id="rolled-${plr.name}" class="rolled" name="rolled" disabled value="${num}" /></div>
+                <div class="col-4" style="font-family: 'Eagle Lake', sans-serif;">
+                <input type="text" id="rolled-${plr.name}" class="rolled" name="rolled" disabled value="${num}" /></div>
                 <div class="col-4">
                     <button onclick="rollDie('${plr.name}')">
                         <img src="assets/images/dice20.png" class="die-image">
                     </button>
                 </div>
             </div>`;
+            
             num = numRoll[Math.floor(Math.random() * numRoll.length)];
             numRoll.splice(numRoll.indexOf(num), 1);
-            //console.log("Array length: " + numRoll.length);
-                }
+
+        }
     }
 
     document.getElementById('roll-section').appendChild(div);
+
 }
 
 // If a player want's to reroll
 function rollDie(id) {
 
-    // Current Number will replace the number that was pulled so the user does not run out of numbers
     let el = document.getElementById('rolled-'+id);
     let curr = el.value;
     let num = numRoll[Math.floor(Math.random() * numRoll.length)];
+    // Current Number will replace the number that was pulled so the user does not run out of numbers
     numRoll.splice(numRoll.indexOf(num), 1, curr);
     //console.log("The Id is: " + id);
     el.value = num;
+
+    this.setBorder(id, num);
+
+}
+
+function setBorder(id, num) {
+    el = document.getElementById('roll-style-'+id);
+    if (el && num == 1) {
+        el.style.border = '2px solid red'
+        el.style.backgroundColor = 'white';
+    } else if (el && num == 20) {
+        el.style.border = 'none';
+        el.style.backgroundColor = 'green';
+    } else if (el) {
+        el.style.border = 'none';
+        el.style.backgroundColor = 'white';
+    }
+
 }

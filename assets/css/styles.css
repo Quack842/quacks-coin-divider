@@ -121,7 +121,6 @@ a {
 a:hover {
     color: white;
 }
-
 /*Table Code */
     .tbl-img {
         display: none;
@@ -137,7 +136,7 @@ a:hover {
 }
 
 /* Amount Page style */
-#roll-style {
+.rl-stl {
     background-color: #fff;
     border-radius: 10px;
     height: auto;
@@ -145,18 +144,18 @@ a:hover {
     margin: 10px 0;
 }
 
-#roll-style h2 {
+.rl-stl h2 {
     margin: 0 auto;
     vertical-align: middle;
 }
 
-#roll-style .col-4 {
+.rl-stl .col-4 {
     display: inline-block;
     margin: auto;
     padding: 15px;
 }
 
-#roll-style button {
+.rl-stl button {
     background-color: transparent;
     border: none;
     float: right;
@@ -177,6 +176,8 @@ a:hover {
   margin: auto;
   text-align: center;
   width: 50px;
+  font-size: 30px;
+  color: #030000;
 }
 
 #roll-btn {
@@ -185,4 +186,12 @@ a:hover {
     padding: 5px;
     color: white;
     border-radius: 5px;
+}
+
+div .green-back {
+    background-color: green;
+}
+
+div .red-border {
+    border: 2px solid red;
 }
