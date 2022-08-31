@@ -210,6 +210,7 @@ function playerRollView() {
         for (player of playerArray) {
             let bgC = (num == 20) ? "green-back" : "";
             let bgRed = (num == 1) ? "red-border" : "";
+            // let bgGreen = (inputs[i].id) ? "green-back" : "";
             let plr = JSON.parse(player);
     
             div.innerHTML += `
@@ -233,10 +234,10 @@ function playerRollView() {
     }
 
     document.getElementById('roll-section').appendChild(div);
-
+    this.highestNum();
 }
 
-// If a player want's to reroll
+// If a player wants to reroll
 function rollDie(id) {
 
     let el = document.getElementById('rolled-'+id);
@@ -249,8 +250,11 @@ function rollDie(id) {
 
     this.setBorder(id, num);
 
+    this.highestNum();
+
 }
 
+// Change border and background when num is 1 or 20
 function setBorder(id, num) {
     el = document.getElementById('roll-style-'+id);
     if (el && num == 1) {
@@ -264,4 +268,26 @@ function setBorder(id, num) {
         el.style.backgroundColor = 'white';
     }
 
+}
+
+function highestNum() {
+    let high = 0;
+    let id = "";
+    let inputs = document.getElementsByName('rolled');
+
+    for (let i = 0; i < inputs.length; i++) {
+        //console.log('now testing ' + inputs[i].id);
+        if (+inputs[i].value > high) {
+            //console.log(`higher value found ${inputs[i].value} for id ${inputs[i].id}`)
+            high = +inputs[i].value;
+            id = inputs[i].id;
+        }
+    }
+    id = 'roll-style' + id.substring(id.indexOf('-'), id.length);
+    //console.log('id is ' + id);
+    el = document.getElementById(id);
+    if(el) {
+        el.style.border = "2px solid green";
+    }
+    //console.log('This is the Id: ' + id + ' with value ' + high);   
 }

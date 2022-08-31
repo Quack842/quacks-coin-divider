@@ -141,7 +141,7 @@ a:hover {
     border-radius: 10px;
     height: auto;
     width: 100%;
-    margin: 10px 0;
+    margin: 20px 0;
 }
 
 .rl-stl h2 {
@@ -193,5 +193,5 @@ div .green-back {
 }
 
 div .red-border {
-    border: 2px solid red;
+    box-shadow: 2px solid red;
 }
