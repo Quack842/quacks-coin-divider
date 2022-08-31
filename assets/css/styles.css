@@ -9,7 +9,6 @@ body {
     text-align: center;
 }
 .top-div {
-    margin: 10px;
     margin-top: 40px;
     padding: 0;
     text-align: center;
@@ -72,6 +71,10 @@ body .card-header {
     margin: 20px 0;
 }
 
+.sub-header {
+    color: #cacaca;
+}
+
 @media screen and (max-width: 770px) {
     .main-header {
         font-size: 100%;
@@ -80,6 +83,11 @@ body .card-header {
     .start-button {
         font-size: 100%;
     }
+
+    .sub-header {
+        font-size: 100%;
+    }
+
 }
 
 /* Player Page */
@@ -114,6 +122,20 @@ a:hover {
     color: white;
 }
 
+/*Table Code */
+    .tbl-img {
+        display: none;
+    }
+
+@media screen and (max-width: 460px) {
+    .tbl-header {
+        display: none;
+    }
+    .tbl-img {
+        display: revert;
+    }
+}
+
 /* Amount Page style */
 #roll-style {
     background-color: #fff;
@@ -128,7 +150,7 @@ a:hover {
     vertical-align: middle;
 }
 
-#roll-style .col {
+#roll-style .col-4 {
     display: inline-block;
     margin: auto;
     padding: 15px;
@@ -154,4 +176,13 @@ a:hover {
   background-color: transparent;
   margin: auto;
   text-align: center;
+  width: 50px;
+}
+
+#roll-btn {
+    background-image: linear-gradient(to bottom, #e60000, #030000);
+    border-color: #b59100;
+    padding: 5px;
+    color: white;
+    border-radius: 5px;
 }

@@ -111,12 +111,18 @@ function calculateTotal() {
     <table class="table table-light" id="user-table">
     <thead>
       <tr>
-        <th scope="col" style="border-radius: 10px 0 0 0;">Players</th>
-        <th scope="col" style="color: #636464;">Platinum</th>
-        <th scope="col"style="color: #055160;">Electrum</th>
-        <th scope="col"style="color: #a47c04;">Gold</th>
-        <th scope="col"style="color: #adb5bd;">Silver</th>
-        <th scope="col"style="color: #664d03; border-radius: 0 10px 0 0;">Copper</th>
+        <th scope="col" class="tbl-header" style="border-radius: 10px 0 0 0;">Players</th>
+        <th scope="col" class="tbl-img"><i class="fa-solid fa-user"></i></th>
+        <th scope="col" class="tbl-header" style="color: #636464;">Platinum</th>
+        <th scope="col" class="tbl-img"><img style="width: 20px;" src="assets/images/platinum.png" alt="platinum coin"></th>
+        <th scope="col"class="tbl-header" style="color: #055160;">Electrum</th>
+        <th scope="col" class="tbl-img"><img style="width: 20px;" src="assets/images/electrum.png" alt="electrum coin"></th>
+        <th scope="col"class="tbl-header" style="color: #a47c04;">Gold</th>
+        <th scope="col" class="tbl-img"><img style="width: 20px;" src="assets/images/gold.png" alt="gold coin"></th>
+        <th scope="col"class="tbl-header" style="color: #adb5bd;">Silver</th>
+        <th scope="col" class="tbl-img"><img style="width: 20px;" src="assets/images/silver.png" alt="silver coin"></th>
+        <th scope="col"class="tbl-header" style="color: #664d03; border-radius: 0 10px 0 0;">Copper</th>
+        <th scope="col" class="tbl-img"><img style="width: 20px;" src="assets/images/copper.png" alt="copper coin"></th>
       </tr>
     </thead>
     <tbody>`;
@@ -206,11 +212,11 @@ function playerRollView() {
     
             div.innerHTML += `
             <div class="row player-colomn" id="roll-style">
-                <div class="col">
+                <div class="col-4">
                     <h2 style="float: left; margin: auto;">${plr.name}</h2>
                 </div>
-                <div class="col" style="font-family: 'Eagle Lake', sans-serif;"><input type="text" id="rolled-${plr.name}" class="rolled" name="rolled" disabled value="${num}" /></div>
-                <div class="col">
+                <div class="col-4" style="font-family: 'Eagle Lake', sans-serif;"><input type="text" id="rolled-${plr.name}" class="rolled" name="rolled" disabled value="${num}" /></div>
+                <div class="col-4">
                     <button onclick="rollDie('${plr.name}')">
                         <img src="assets/images/dice20.png" class="die-image">
                     </button>
@@ -221,12 +227,12 @@ function playerRollView() {
             //console.log("Array length: " + numRoll.length);
                 }
     }
+
     document.getElementById('roll-section').appendChild(div);
 }
 
 // If a player want's to reroll
 function rollDie(id) {
-    //let numRoll = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"];
 
     // Current Number will replace the number that was pulled so the user does not run out of numbers
     let el = document.getElementById('rolled-'+id);
