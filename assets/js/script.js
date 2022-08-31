@@ -1,4 +1,5 @@
 var playerArray = [];
+var numRoll = [];
 let userValue = document.getElementById('users-values');
 let form = document.getElementById('form-submit');
 
@@ -79,6 +80,11 @@ function submitRollInput() {
     document.getElementById("calculateSection").style.display = "none";
     document.getElementById("playerSection").style.display = "none";
     document.getElementById("playerRollSection").style.display = "block";
+
+    let div = document.getElementById("rolled-results");
+    if (div) {
+        div.innerHTML = '';
+    } 
 }
 
 function backPlayer() {
@@ -181,34 +187,52 @@ function setName(id, value) {
 function playerRollView() {
 
     // This function will roll a random number between 1 and 20
-    let numRoll = Math.floor(Math.random() * 20) + 1;
+    numRoll = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"];
+    let num = numRoll[Math.floor(Math.random() * numRoll.length)];
+    numRoll.splice(numRoll.indexOf(num), 1);
+    //console.log("Array length: " + numRoll.length);
 
-    let div = document.createElement('div');
+    let div = document.getElementById('rolled-results');
+    if(!div) {
+        div = document.createElement('div');
+        div.id = 'rolled-results';
+    }
+    console.log("div is: " + div.id);
+    div.innerHTML = '';
+
     if (playerArray) {
         for (player of playerArray) {
             let plr = JSON.parse(player);
     
-            div.innerHTML = `
+            div.innerHTML += `
             <div class="row player-colomn" id="roll-style">
                 <div class="col">
                     <h2 style="float: left; margin: auto;">${plr.name}</h2>
                 </div>
-                <div class="col" style="font-family: 'Eagle Lake', sans-serif;"><input type="text" id="rolled" name="rolled" disabled value="${num}" /></div>
+                <div class="col" style="font-family: 'Eagle Lake', sans-serif;"><input type="text" id="rolled-${plr.name}" class="rolled" name="rolled" disabled value="${num}" /></div>
                 <div class="col">
-                    <button onclick="rollDie()">
+                    <button onclick="rollDie('${plr.name}')">
                         <img src="assets/images/dice20.png" class="die-image">
                     </button>
                 </div>
             </div>`;
-        }
+            num = numRoll[Math.floor(Math.random() * numRoll.length)];
+            numRoll.splice(numRoll.indexOf(num), 1);
+            //console.log("Array length: " + numRoll.length);
+                }
     }
     document.getElementById('roll-section').appendChild(div);
 }
 
 // If a player want's to reroll
-function rollDie() {
-    let numRoll = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"];
-    let num = Math.floor(Math.random() * numRoll.length);
+function rollDie(id) {
+    //let numRoll = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"];
 
-    document.getElementById('rolled').value = numRoll;
+    // Current Number will replace the number that was pulled so the user does not run out of numbers
+    let el = document.getElementById('rolled-'+id);
+    let curr = el.value;
+    let num = numRoll[Math.floor(Math.random() * numRoll.length)];
+    numRoll.splice(numRoll.indexOf(num), 1, curr);
+    //console.log("The Id is: " + id);
+    el.value = num;
 }

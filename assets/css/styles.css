@@ -149,7 +149,7 @@ a:hover {
     float: right;
 }
 
-#rolled {
+.rolled {
   border: none;
   background-color: transparent;
   margin: auto;
