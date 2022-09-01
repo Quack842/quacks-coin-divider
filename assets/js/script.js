@@ -1,6 +1,5 @@
 var playerArray = [];
 var numRoll = [];
-let userValue = document.getElementById('users-values');
 let form = document.getElementById('form-submit');
 
 // Prevent form from refreshing page after submit
@@ -42,15 +41,12 @@ function deletePlayer(id) {
         let v = element.value;
         let arrayId = `{"id":"${id}","name":"${v}"}`;
         let ind = playerArray.indexOf(arrayId);
-        //console.log("Index " + ind);
 
         if (ind >= 0) {
-            //console.log('Item: ' + playerArray[ind]);
             playerArray.splice(ind, 1);
         }
 
         let del = document.getElementsByName('player-colomns');
-        //del.splice(ind, 1);
         del[ind].remove();
     }
 }
@@ -128,7 +124,7 @@ function calculateTotal() {
     <tbody>`;
 
     if (playerArray ){
-    for (player of playerArray) {
+    for (let player of playerArray) {
         let plr = JSON.parse(player);
 
         let rowHtml = `
@@ -175,14 +171,11 @@ function calculateTotal() {
 
 // Function to set name on focus out
 function setName(id, value) {
-    //console.log("Id: " + id + " Value: " + value);
     let nameVal = `{"id":"${id}","name":"${value}"}`;
     let searchVal = `{"id":"${id}",`;
 
     for (let i = 0; i < playerArray.length; i++) {
-        //console.log("Array Value" + playerArray + "blank" + searchVal);
         if (playerArray[i].startsWith(searchVal)) {
-            //console.log("Item: " + nameVal);
 
             playerArray.splice(i, 1, nameVal);
         }
@@ -203,11 +196,10 @@ function playerRollView() {
         div = document.createElement('div');
         div.id = 'rolled-results';
     }
-    //console.log("div is: " + div.id);
     div.innerHTML = '';
 
     if (playerArray) {
-        for (player of playerArray) {
+        for (let player of playerArray) {
             let bgC = (num == 20) ? "green-back" : "";
             let bgRed = (num == 1) ? "red-border" : "";
             let plr = JSON.parse(player);
@@ -233,7 +225,6 @@ function playerRollView() {
     }
 
     document.getElementById('roll-section').appendChild(div);
-    //this.setBorder(id, num);
     this.highestNum();
 }
 
@@ -245,32 +236,13 @@ function rollDie(id) {
     let num = numRoll[Math.floor(Math.random() * numRoll.length)];
     // Current Number will replace the number that was pulled so the user does not run out of numbers
     numRoll.splice(numRoll.indexOf(num), 1, curr);
-    //console.log("The Id is: " + id);
     el.value = num;
 
-    //this.setBorder(id, num);
     this.highestNum();
 
 }
 
 // Change border and background when num is 1 or 20
-function setBorder(id, num) {
-    el = document.getElementById('roll-style-'+id);
-    if (el && num == 1) {
-        el.style.boxShadow = '0px 0px 15px 5px #FF0000'
-        el.style.background = 'linear-gradient(180deg, rgba(255,0,0,1) 0%, rgba(7,7,7,1) 100%);';
-    } else if (el && num == 20) {
-        el.style.border = '0px 0px 15px 5px #1BFF04';
-        el.style.background = 'linear-gradient(180deg, rgba(20,255,0,1) 0%, rgba(7,7,7,1) 100%);';
-    } else if (el) {
-        el.style.boxShadow = 'none';
-        el.style.background = 'none';
-        el.style.border = 'none';
-        el.style.backgroundColor = 'white';
-    }
-
-    this.highestNum();
-}
 
 function highestNum() {
     let high = 0;
@@ -282,7 +254,6 @@ function highestNum() {
     for (let i = 0; i < inputs.length; i++) {
         let val = +inputs[i].value;
         if (val > high) {
-            //console.log(`higher value found ${inputs[i].value} for id ${inputs[i].id}`)
             high = +inputs[i].value;
             idHighest = inputs[i].id;
         }
@@ -301,7 +272,6 @@ function highestNum() {
     console.log('idH is ' + idHighest);
     console.log('id1 is ' + id1);
     console.log('id20 is ' + id20);
-    //el = document.getElementById(idHighest);
 
     let myArr = document.getElementsByName('loop-style');
     
@@ -327,5 +297,4 @@ function highestNum() {
             divEl.style.backgroundColor = 'white';
         }
     }
-    //console.log('This is the Id: ' + id + ' with value ' + high);   
 }

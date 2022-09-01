@@ -103,13 +103,13 @@ body .card-header {
     background-color: transparent;
 }
 
-section .col-4 {
+div .col-4 {
     display: inline-block;
     margin: auto;
     padding: 15px;
 }
 
-section h2 {
+div h2 {
     margin: 0 auto;
     vertical-align: middle;
 }

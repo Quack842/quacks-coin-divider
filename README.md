@@ -13,7 +13,7 @@ You can read the full Wikipedia information [Here](https://en.wikipedia.org/wiki
 ## Why "Quack's Coin Divider"?
 
 What's with the name? <br>
-I like to believe that I'm an avid gamer, and in all the games a play, my username (Gamer's Tag) is always 'Quack', and I thought that because I'm creating the site that involves gaming... It only seemed fitting. Also because the application is designed to divide the entered coins, that's where the 'coin divider' part of the name comes in.
+I like to believe that I'm an avid gamer, and in all the games a play, my username (Gamer's Tag) is always 'Quack', and I thought that because I'm creating the site that involves gaming... It only seemed fitting. Also, because the application is designed to divide the entered coins, that's where the 'coin divider' part of the name comes in.
 
 The Application can be viewed live by [clicking on this link!](https://quack842.github.io/quacks-coin-divider/)
 
@@ -34,8 +34,7 @@ The Application can be viewed live by [clicking on this link!](https://quack842.
     * [Validating The Code](#validating-the-code)
     * [Accessibility](#accessibility)
 5. [Deployment](#deployment)
-6. [Credits](#credits)
-7. [End Product](#end-product)
+6. [End Product](#end-product)
 
 # User Experience (UX)
 [Back To Top](#quacks-coin-divider) <br>
@@ -50,7 +49,7 @@ In Dungeons and Dragons, there is typically a party of 4-6 players. In the game,
 Let's say you and your party (5 People) kills 4 mosters/creatures and the total coin loot is <b>1</b> <span style="color: #636464;">Platinum</span>, <b>9</b> <span style="color: #055160;">Electrum</span>, <b>15</b> <span style="color: #a47c04;">Gold</span>, <b>143</b> <span style="color: #adb5bd;">Silver</span> and <b>354</b> <span style="color: #664d03;">Copper</span>. It will be difficult to calculate the amount that needs to be split between the players as you can not split the Platinum into 10 gold pieces as you can not split a solid coin into pieces.
 So this app will help split the total loot equally amongst each other and the remaining amount can be put in a kitty, or like how D&D work, the players can roll a die 20 for the undivided loot and the highest roll wins.
 
-The piont of this application is 
+The point of this application is to make it easier for players to divide the currect amount of coins amongst each other.
 
 ## User Goals
 
@@ -64,105 +63,117 @@ The piont of this application is
 
 ## Color Scheme
 
-The Main Colors that was chosen for this applicaiton was based off of the colors you'd see on the [D&D Beyond](https://www.dndbeyond.com/) website. This website is a very popular website for dungeons and dragons geeks. The 
-![Main Color 1](assets/images/main-color-1.png) ![Main Color 2](assets/images/main-color-2.png)
+The Main Colors that were chosen for this application was based off of the colors you'd see on the [D&D Beyond](https://www.dndbeyond.com/) website. This website is a very popular website for dungeons and dragons geeks. The Red and Dark Gray (almost black) idea came from the D&D website, the gold color felt like it was the best fit for the Red and black colors.
+<img src="assets/images/color-1.png" width="200px" alt="Red Color">
+<img src="assets/images/color-2.png" width="200px" alt="Black Color"> 
+<img src="assets/images/color-3.png" width="200px" alt="Gold Color">
+
+For the page where the user can roll for the remaining coins, if the a player get a nat 20 (natural 20), the background will change to a bright green color.
+<img src="assets/images/color-5.png" width="200px" alt="Green Color">
 
 ## Typography
 
-The Main font that is used for this website is Roboto and the secondary font is Oswald. The font, sans-serif, is used as a back-up font for in case the user's browser does not support the main and secondary fonts. The website [Google Fonts](https://fonts.google.com/) was used to select and import the fonts.
+The Main font that is used for this website is Eagle Lake and the secondary font is Meera Inimai. The font that was used for the normal text is Prosto One. The font, sans-serif, is used as a back-up font for in case the user's browser does not support the main and secondary fonts. The website [Google Fonts](https://fonts.google.com/) was used to select and import the fonts.
+[Font Joy](https://fontjoy.com/) was used to help choose a font that is best paired with the main Eagle Lake font.
 
-The website [Font Awesome](https://fontawesome.com/) was used for the icons that can be seen in the footer and on the Contact Us page.
+The website [Font Awesome](https://fontawesome.com/) was used for the icons.
 
 ## Wireframes
 
-The Application [Balsamiq](https://balsamiq.com/) was used to create the basic idea and layout for the My Perfect Holiday & Safari website as suggested by code institute.
-<details>
-    <summary>Simple Site Map</summary>
-    
-![Website Layout Main](assets/images/website-main-layout.png) <br>
-This Sitemap was designed to get the basic layout and structure of the website.
-
-</details>
+The Application [Balsamiq](https://balsamiq.com/) was used to create the basic idea and layout for the Application as suggested by code institute.
 <details>
     <summary>Home Page</summary>
     
-![Website Layout Home](assets/images/website-layout-home.png) <br>
-The Home Page is a simple page with information about the Travel Agency and what they can offer. In The original design, The About Page was included as an extra html page. It was suggested by my Mentor that it might be a better and cleaner idea to combine the Home and About Us page, I agreed to that suggestion and added the About Us Information below the Home Page Information.
+![Website Layout Home](assets/images/landing-page-layout.png) <br>
+The landing page is a simple page that explains what D&D is and what the use is of the application. There is also a link to the wikipidia page that explains in details what Dungeons and Dragons is. On the landing page is also the Dungeon and Dragons Logo that you will also find on the D&D Beyond website.
 
 </details>
 <details>
-    <summary>Activities Page</summary>
+    <summary>Players Page</summary>
     
-![Website Layout Activites](assets/images/website-layout-activities.png) <br>
-On the Activities Page, there are 5 cards that are presented and will flip around and reveal the related information when the card is clicked/hovered over.
-
-In the original design, the Hero image was displayed at the top of the Activities and Contact Us pages. My Mentor asked if the hero image was needed on the other pages as well and challenged me to find a way to show the relation to the pages without a hero image on every single page. I came to the conclusion that having a shadow below the navigation bar will show the relation between the pages without the need of the hero image on each page.
+![Website Layout Activites](assets/images/add-player-layout.png) <br>
+The Players Page Has a simple design where the user can add and remove players. When the user click on the Add Player button, field will be added where the user can enter any name they want. This name that they enter will be pushed to an array in the background, this will be used on the next page. The user will also be able to remove a player by clicking on the trash icon. When the user click on the trash Icon, the player will be removed from the array in the background.
+The user will not be able to go to the next page if they have not entered a name.
 
 </details>
 <details>
-    <summary>Contact Us Page</summary>
+    <summary>Calculations Page</summary>
     
-![Website Layout Contact](assets/images/website-layout-contact.png) <br>
-On the Contact Us Page, there are two panels, a left and a right panel. The left panel displays the Contact Form and the Right Panel Displays the Contact Information.
+![Website Layout Contact](assets/images/calculations-layout.png) <br>
+The Calculations page is not a separate page but a different section that is hidden by default. When the user click on the next button on the Players page, the player page will be set to hidden and the calculations page will be shown.
+
+On the Calculations page, the user will be able to enter the total amount of coins that the party has accumulated by defeating the creatures/monsters. When the user click the 'Calculate' button, a table will appear that shows the divided amount to each of the players that was added on the previous page.
+
+The Remaining amount that could not be divided amongst the players, will be shown at the bottom of the page.
+</details>
+<details>
+    <summary>Roll Digitally Page</summary>
+    
+![Website Layout Activites](assets/images/roll-dice-layout.png) <br>
+The Roll Digitally Page is also hidden by default and when the 'Click To Roll Digitally' button is clicked, the Calculations Page and Player Page will be hidden and the Roll Digitally page will be shown.
+
+When the user click on the 'Generate...' button, each of the playeres that was entered at the beginning will have a random number rolled. Originally, I wanted the player name to be re-arranged from the highest to smallest number, but decided to add a color to the highest number instead of re-arranging the players.
+
+There is also a short discription on what each of the colors mean.
+
 </details>
  <br>
 
 # Features
-[Back To Top](#my-perfect-holiday--safari) <br>
+[Back To Top](#quacks-coin-divider) <br>
 [Back To Table Of Contents](#table-of-contents)
 
 ## Existing Features
     
 <details>
-    <summary>Navigation Bar - All Pages</summary>
-    When the user hover over the 3 different links, the links will grow. When the user click on the link, the page will change to the corresponding page and the link will change color to indicate that said page is currently active. 
+    <summary>Players Page - Add Player</summary>
+    The user will be able to add a player by clicking on the 'Add Player' button. The user will also be able to edit the players names as well as remove a player incase they accidently added to many or doesn't need the player anymore.
+    There will also be two buttons on the bottom of the page that will allow the user to go back a page or go to the next page.
+<br>
+    The next button will hide the player page and show the calculations page while still keeping the Roll Page hidden.
    
-
-https://user-images.githubusercontent.com/80696922/181263648-ad7f24d6-144b-4e07-b3e0-cf370d31a701.mp4
-
-
+![Add Player Button](assets/images/add-player-button.png) <br>
+![Edit Name](assets/images/players-blocks.png) <br>
+![Back and NExt Buttons](assets/images/back-next-button.png) <br>
 </details>     
 <details>
-    <summary>Back To Top Button - Home Page</summary>
-    This button will appear when the user scroll past a certain point. When the user click on this button, they will be taking back to the top of the home page. 
-   
+    <summary>Calculations Page - Coins Input</summary>
+    After the User clicked on the next button, they will be able to insert the total accumulated coins into the provided input boxes. 
+    Only after the user click on the Calculation button, the players that the user has created on the players page, will be displayed in a table with the divided amount amongst them.
+    <br>
+    The amount of coins that could not be divided amongst each player will be displayed in the 'Undivided Amount' section. The user can then decide if they want to do one of the following:
 
-https://user-images.githubusercontent.com/80696922/181264734-44541f18-3427-4914-a886-1ff5dceb5093.mp4
+1.  Put the remaining amount in a kitty (a bag with coins used to pay for inns and party related items)
+2.  Roll a die 20 in real life to decide who gets the remaining amount.
+3.  Roll digitally for each player to decide who gets the remaining amount.
 
-
+![Coins Input](assets/images/coin-inputs.png) <br>
+![Divided amongst Players](assets/images/divided-calculations.png) <br>
+![Remaining amount](assets/images/remaining-coins.png) <br>
 </details>     
 <details>
-    <summary>Flip Cards - Activities Page</summary>
-    When the user hover/click on the card, the card will flip reavealing the corresponding details.
-   
-
-https://user-images.githubusercontent.com/80696922/181264782-4af08b0c-1cfe-4340-9229-5c505d463266.mp4
-
-
-</details>    
-<details>
-    <summary>Interactive Map - Contact Page</summary>
-    The user will be able to interact with the map (Just like how one would be able to interact with google maps) on the contact us page.
-   
-
-https://user-images.githubusercontent.com/80696922/181264856-7c22e2df-3e74-44ec-a12d-01e829fd64a6.mp4
-
-
-</details>    
-<details>
-    <summary>Footer - All Pages</summary>
-    The footer has a hover effect on the social links and when a user hover over the links, it will grow, rotate and change color.
-   
-
-https://user-images.githubusercontent.com/80696922/181264877-c4883a5d-d3ae-4f4c-a887-0a5177855889.mp4
-
-
+    <summary>Roll Page - Generating Rolls</summary>
+    When the user click on the Generate button, the players that was entered on the Player page, will appear and a number between 1 and 20 will be displayed by each players name. 
+    <br>
+    If a player rolls a 1, The background and border will turn red because typically rolling a 1 in D&D is very bad, but a green border will still be displayed on the player that rolled the highest.
+    <br>
+    If a player rolls a 20, The background and border will turn green because rolling a 20 is a very good! 
+    <br>
+    If there is no players that got a 1 or 20, the highest number will be displayed, which will indicates the winner.
+    <br>
+    The generating function is desinged in such a way that will insure that there are no repeats of numbers. In Real life if all 5 players roll a die 20, there will be a chance that some players might roll the same number, and will have to roll again to see who wins. This function will prevent that.
+    <br>
+    <br>
+    At the very bottom of the page, there will be 2 buttons. One for going back a page (the 'Back' Button) and the other one is to reset and go back to the very beginning of the aapplication (the 'Reset Everything' button).
+    
+![Before Roll Generate](assets/images/generate-roll-before.png) <br>
+![Roll Generated](assets/images/roll-generated.png) <br>
+![Reset Everything button](assets/images/reset-everything.png) <br>
 </details>
 <br>
 
 # Technologies Used
-
-[Back To Top](#my-perfect-holiday--safari) <br>
+[Back To Top](#quacks-coin-divider) <br>
 [Back To Table Of Contents](#table-of-contents)
 
 ## Languages Used
@@ -170,7 +181,7 @@ https://user-images.githubusercontent.com/80696922/181264877-c4883a5d-d3ae-4f4c-
 Used for providing the core structure of the website pages. <br>
 
 * [CSS3](https://en.wikipedia.org/wiki/CSS#CSS_3) <br>
-Used for styling the HTML documents <br>
+Used for styling the HTML and Javascript documents <br>
 
 * [JavaScript](https://en.wikipedia.org/wiki/JavaScript) <br>
 Used to integrate specific features and create dynamic and interactive web content.
@@ -194,23 +205,11 @@ This application was suggested by Code Institute to use for planning and creatin
 * [Reverso](https://www.reverso.net/spell-checker/english-spelling-grammar/) <br>
 I used this website to help with the spelling and grammer.
 
-* [Unsplash](https://unsplash.com/) <br>
-All of the Images used on the website is from this website. <br>
-
 * [Bootstrap](https://getbootstrap.com/) <br>
 This website is a well known and used website by developers to help with coding and styling.
 
 * [Box Shadow Generator](https://html-css-js.com/css/generator/box-shadow/) <br>
 I used this website to help with creating a box shadow with certain specifications.
-
-* [Maps Generator](https://www.maps.ie/create-google-map/) <br>
-When creating the Contact Details, I used this website to help generate the location on a map and to create a iframe so the user can interact with the map.
-
-* [Kruger Shalati Website](https://www.krugershalati.com/about-us/) <br>
-The details for the Kruger Shalati Hotel was found under their About Us page on this website. <br>
-
-* [Color Picker](https://coolors.co/) <br>
-This website helped make it easier choosing complementary color scheme for the website. <br>
 
 * [CSS Gradient](https://cssgradient.io/) <br>
 Used this website to generate a gradient color into code that can be used in HTML5/CSS3. <br>
@@ -218,9 +217,14 @@ Used this website to generate a gradient color into code that can be used in HTM
 * [CorelDraw App](https://www.coreldraw.com/en/?link=wm) <br>
 This App was used to reduse the size of the images.
 
-# Testing
+* [StackOverflow](https://stackoverflow.com/) <br>
+I used this website to help understand some of the Javascript functions.
 
-[Back To Top](#my-perfect-holiday--safari) <br>
+* [CSS Button Generator](https://css3buttongenerator.com/) <br>
+This website was usefull for designing the button and getting the code.
+
+# Testing
+[Back To Top](#quacks-coin-divider) <br>
 [Back To Table Of Contents](#table-of-contents) <br>
 
 ## Responsive Test
@@ -231,38 +235,42 @@ I used [Responsive Design Checker](https://responsivedesignchecker.com/) to test
 To validate the HTML on the website, I used [W3C Validator](https://validator.w3.org/#validate_by_input).
 <details>
     <summary>
-        Index Page Validator
+        Landing Page Validator
     </summary>
 
-![index.html Validator](assets/images/index-validator.png)
+![index.html Validator](assets/images/html-validator.png)
 </details>
 
 <details>
     <summary>
-        Activities Page Validator
+        Player Page Validator
     </summary>
 
-![activities.html Validator](assets/images/activities-validator.png)
-</details>
-
-<details>
-    <summary>
-        Contact Us Page Validator
-    </summary>
-
-![contact-us.html Validator](assets/images/contact-validator.png)
+![activities.html Validator](assets/images/player-validator.png)
 </details>
 <br>
 
-To validate the CSS code one the website, I used [Jigsaw Validator](https://jigsaw.w3.org/css-validator/#validate_by_input).
-The CSS Page was tested and there were no errors
+To validate the CSS code on the website, I used [Jigsaw Validator](https://jigsaw.w3.org/css-validator/#validate_by_input).
+The CSS Page was tested and there were no errors.
 
 <details>
     <summary>
         Styles Page Validator
     </summary>
 
-![contact-us.html Validator](assets/images/styles-validator.png)
+![contact-us.html Validator](assets/images/css-validator.png)
+</details>
+<br>
+
+To validate the Javascript code on the website, I used [JSHint Validator](https://jshint.com/).
+The Javascript Page was tested and there were no errors
+
+<details>
+    <summary>
+        Javascript Page Validator
+    </summary>
+
+![contact-us.html Validator](assets/images/javascript-validator.png)
 </details>
 <br>
 
@@ -272,7 +280,7 @@ The Lighthouse feature on Chrome DevTools was used to test the Accessibility of 
 
 <details>
     <summary>
-        Home Page
+        Landing Page
     </summary>
 
 ![contact-us.html Validator](assets/images/index-lighthouse.png)
@@ -280,24 +288,15 @@ The Lighthouse feature on Chrome DevTools was used to test the Accessibility of 
 
 <details>
     <summary>
-        Activities Page
+        Player Page
     </summary>
 
-![contact-us.html Validator](assets/images/activities-lighthouse.png)
-</details>
-
-<details>
-    <summary>
-        Contact Page
-    </summary>
-
-![contact-us.html Validator](assets/images/contact-lighthouse.png)
+![contact-us.html Validator](assets/images/player-lighthouse.png)
 </details>
 <br>
 
 # Deployment
-
-[Back To Top](#my-perfect-holiday--safari) <br>
+[Back To Top](#quacks-coin-divider) <br>
 [Back To Table Of Contents](#table-of-contents) <br>
 
 [GitPod](https://gitpod.io/) Was used for the development of the website. <br>
@@ -317,83 +316,48 @@ The following steps was taking to Deploy the website via Github:
     * Now a link has been generated for the Live Website.
 <br>
 
-# Credits
-
-[Back To Top](#my-perfect-holiday--safari) <br>
-[Back To Table Of Contents](#table-of-contents) <br>
-
-When creating the README File, multiple examples was used from other students to help with creating this README file.
-
-### Suggested by my mentor
-* [iKlevvv](https://github.com/iKelvvv/MS1)
-* [Josswe26](https://github.com/josswe26/pura-vida-spa)
-
-### Code Institute
-* [Code Institute README](https://github.com/Code-Institute-Solutions/readme-template) 
-
-### Fellow Slack Students
-* [Dragon-fire-fly](https://github.com/dragon-fire-fly/venom/blob/main/README.md#testing)
-
-## Codepen
-CodePen is a social development environment for front-end designers and developers. Fellow Front-End Developers can use this website to help with certain code and features. <br>
-The following code were used as inspiration with some of the features on the website: <br>
-
-[Card Flip Feature](https://codepen.io/edeesims/pen/wvpYWW) <br>
-[Back to top button on home page](https://codepen.io/JavaScriptJunkie/pen/pPRooV)
-
-[Unsplash](https://unsplash.com/) <br>
-All of the Images used on the website is from the website, Unsplash. <br>
-<br>
-
 # End Product
-
-[Back To Top](#my-perfect-holiday--safari) <br>
+[Back To Top](#quacks-coin-divider) <br>
 [Back To Table Of Contents](#table-of-contents) <br>
-
-<details>
-<summary>
-Navigation Bar
-</summary>
- The Navigation bar is featured across all three pages and allows the user to navigate around the website using the Home, Activities and Contact Us links provided. The Navigation bar is identical on all three pages and this will allow for the user to navigate around with ease. The current page that is selected will be highlighted so the user will know on what page they currently are on. <br>
-
- ![Navigation Bar](assets/images/navbar-image.png)
-</details>
 <details>
 <summary>
 Landing Page
 </summary>
- The landing page includes a hero image that is the first image the user will see when the website opens. On the image is a short text that briefly tells the user what to expect about the website. AS the user scrolls down, they will see more information about the Travel Agency and what to expect about the website. <br>
+ The landing page is where the purpose of the application is explained as well as more information about Dungeons and Dragons in card form. It has a simple design and on the landing page is a image of the Dungeons and Dragons Logo.  <br>
 
- ![Main Hero Sample](assets/images/main-hero-image.png)
+ ![Landing Page](assets/images/landing-page-finish.png)
 </details>
 
 <details>
 <summary>
-Activities Page
+Player Page
 </summary>
-On the Activities page, the user will be able to see what kind of activities are available to help build the perfect holiday. There are about 5 flip cards and each one will have a picture on the front of the card and when the user hovers over the card, it will flip around and reveal items related to the type of activities.
+On the Players page, the user will be able to add as many players as they want by clicking the 'Add player' button, and also be able to remove the players.
   <br>
 
- ![Activities Page](assets/images/activities-layout.png)
+ ![Players Page](assets/images/player-finish.png)
 </details>
 
 <details>
 <summary>
-Contact Us Page
+Calculate Page
 </summary>
-When the user go to the Contact Us Page, they will have two types of contact options. On the Left side of the page is a contact us Form that the user will be able to fill in and it will send the message to the Travel Agency. On The Right hand side of the website, there will be contact details that the user can use to contact the Travel Agency self. The map on the Contact Details shows the exact location and the map is interactive, and allows the user to zoom in, out and move it all about.
+On this page, the user will have to insert the total coins that was collected in each of the corresponding input boxes. After the user has entered the values into the boxes and click on the 'Calcualte' button, a table will appear with each players name (that the user has enetered on the Player Page) and the total amount of coins divided amongst all the layers.
   <br>
-<img src="assets/images/contact-us-form.png" width="325px"> <img src="assets/images/contact-us-details.png" width="300px">
+
+ ![Calculation Page](assets/images/calculate-finish.png)
+ ![Calculation Video](assets/videos/calculate-finish-vid.mp4)
 </details>
 
 <details>
 <summary>
-Footer
+Player Roll Page
 </summary>
-The Footer has a simple design that shows the social tags. Each tag links to the relative social media page and all links will open in a new tab and keep the current website open as well, this will make it easy for the user to navigate and the user would not have to worry about navigating back to the website. There is also an on hover effect on the social media links, it will change color, rotate and grow bigger.
+This page will allow the user to roll a die 20 for each of the players that was entered on the Player Page.
   <br>
 
-  ![Footer](assets/images/footer.png)
+  ![Player Roll Image](assets/images/player-roll-finish.png)
+  ![Player Roll Video](assets/videos/player-roll-vid.mp4)
 </details>
 
 

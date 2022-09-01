@@ -13,7 +13,8 @@
     <title>Quack's Coin Divider</title>
 </head>
 <body class="container">
-    <section id="playerSection">
+    <div id="playerSection">
+
     <div class="top-div">
         <h1 class="main-header">How Many Players Are There?</h1>
         <br>
@@ -23,19 +24,19 @@
     <br>
     <!-- First Section of Discription -->
     <form id="form-submit">
-    <section id="player-list">
+    <div id="player-list">
 
-    </section>
+    </div>
     <br>
-    <section class="button-section">
+    <div class="button-section">
         <button class="start-button" onclick="history.back()">Back</button>
         <button class="start-button" type="submit" id="btn-submit" onclick="submitInput()">Next</button>
-    </section>
+    </div>
     </form>
     <br>
-    </section>
+    </div>
     <!-- Second Section Viewed When Next Clicked-->
-    <section id="calculateSection" style="display: none;">
+    <div id="calculateSection" style="display: none;">
 
         <div class="top-div">
             <h1 class="main-header">What is The total amount of coins?</h1>
@@ -43,7 +44,7 @@
         </div>
         <br>
         <!-- First Section of Discription -->
-        <section class="row">
+        <div class="row">
             <!-- Platinum -->
             <div class="col">
                 <label for="platinum" style="color:#cacaca ;">Platinum</label> 
@@ -74,17 +75,17 @@
                 <img style="width: 15px;" src="assets/images/copper.png" alt="copper coin"> <br>
                 <input type="number" id="copper" value="0">
             </div>
-        </section>
+        </div>
         <button class="start-button" id="calculate" onclick="calculateTotal()">Calculate</button>
         <br>
         <h1 class="main-header">Divided Coins Bewteen Players</h1>
         <hr>
         <!-- Table With Divided amongst Players -->
-        <section id="users-values">
+        <div id="users-values">
     
-        </section>
+        </div>
         <!-- Undivided Section -->
-        <section>
+        <div>
             <div class="top-div">
                 <h1 class="main-header">Undivided Coins</h1>
                 <h4 class="sub-header" style="color: #cacaca;">You can either put the remaining amount in a kitty or the players can roll for the remaining coins.</h4>
@@ -96,55 +97,55 @@
             <div class="col">
                 <label for="platinum" style="color:#cacaca ;">Platinum</label> 
                 <img style="width: 15px; margin: 10px;" src="assets/images/platinum.png" alt="platinum coin"> <br>
-                <section id="platinumOver"></section>
+                <div id="platinumOver"></div>
             </div>
             <!-- Electrum -->
             <div class="col">
                 <label for="electrum" style="color:#cacaca ;">Electrum</label>
                 <img style="width: 15px; margin: 10px;" src="assets/images/electrum.png" alt="electrum coin"> <br>
-                <section id="electrumOver"></section>
+                <div id="electrumOver"></div>
             </div>
             <!-- Gold -->
             <div class="col">
                 <label for="gold" style="color:#cacaca ;">Gold</label>
                 <img style="width: 15px; margin: 10px;" src="assets/images/gold.png" alt="gold coin"> <br>
-                <section id="goldOver"></section>
+                <div id="goldOver"></div>
             </div>
             <!-- Silver -->
             <div class="col">
                 <label for="silver" style="color:#cacaca ;">Silver</label>
                 <img style="width: 15px; margin: 10px;" src="assets/images/silver.png" alt="silver coin"> <br>
-                <section id="silverOver"></section>
+                <div id="silverOver"></div>
             </div>
             <!-- Copper -->
             <div class="col">
                 <label for="copper" style="color:#cacaca ;">Copper</label> 
                 <img style="width: 15px; margin: 10px;" src="assets/images/copper.png" alt="copper coin"> <br>
-                <section id="copperOver"></section>
+                <div id="copperOver"></div>
             </div>
             </div>
-        </section>
-        <section class="button-section">
+        </div>
+        <div class="button-section">
             <button class="start-button" onclick="backPlayer()">Back</button>
             <button class="start-button" onclick="submitRollInput()">Click to Roll Digitally</button>
-        </section>
-    </section>
+        </div>
+    </div>
 
     <!-- Third Section Viewed When Next Clicked-->
-    <section id="playerRollSection" style="display: none;">
+    <div id="playerRollSection" style="display: none;">
         <div class="top-div">
-            <h1 class="main-header">Click On the Die 20 Image to roll a number bewteen 1 and 20.</h1>
+            <h1 class="main-header">Click Generate to roll a number bewteen 1 and 20.</h1>
             <br>
-            <button id="roll-btn" onclick="playerRollView()">Generate Die 20 Roll For Everybody!</button>
+            <button id="roll-btn" onclick="playerRollView()">Generate!</button>
         </div>
         <hr>
         <!-- First Section of Roll -->
-        <section id="roll-section">
+        <div id="roll-section">
             
-        </section>
+        </div>
         <br>
         <!-- Explains What the colors means -->
-        <section class="row">
+        <div class="row">
             <div class="col">
                 <!-- Explains what The Green border only means -->
                 <div id="green-brd-explain"></div> <br>
@@ -160,14 +161,14 @@
                 <div id="green-back-explain"></div> <br>
                 <span style="color: #cacaca;">If the border and background is green, this means that the person rolled a nat 20, This is the best roll you can get</span>
             </div>
-        </section>
-        <section class="button-section">
+        </div>
+        <div class="button-section">
             <button class="start-button" onclick="backRollPlayer()">Back</button>
             <!-- When this button is clicked, it will take them back to the start and reset everything -->
-            <button class="start-button"><a href="./index.html" onclick="reset()">Reset Everything!</a></button>
-        </section>
+            <a class="start-button" href="./index.html" onclick="reset()">Reset Everything!</a>
+        </div>
         <br>
-    </section>
+    </div>
     <!-- Script File Link -->
     <script src="assets/js/script.js"></script>
 </body>
