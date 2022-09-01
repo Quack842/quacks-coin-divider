@@ -298,10 +298,12 @@ The Lighthouse feature on Chrome DevTools was used to test the Accessibility of 
 
 ## Bugs and Fixes
 
-There was a few small errors that was easily fixed. Only at the end when I implemented the feature that highlight the player that rolled the highest number, player that rolled a 1 and the player that rolled a 20. It was difficult to write the code in such a way that if the user press the Generate button again, that the previous player with the highest number is not highlighted anymore and the new player is highlighted. Unfortunalty I didn't document the error itself, but the evidance of my frustration is logged in the git commits.
+There were a few small errors that was easily fixed. <br>
+Only at the end when I implemented the feature that highlight the player that rolled the highest number, player that rolled a 1 and the player that rolled a 20. It was difficult to write the code in such a way that if the user press the Generate button again, that the previous player with the highest number is not highlighted anymore and the new player is highlighted. Unfortunalty I did not document the error itself, but the evidance of my frustration is logged in the git commits.
 <br>
-The way that I fixed the errors was, with the help of my dad (who works in web development), by creating a function that will get the element that is equal to 1, element that is equal to 20 and an element that gets the highest number by looping through the provided array.
-Then creating a for of loop and a if else inside said for loop, that will change the border and background according the logic that is givin in the if statement. Also remembering to change the style of the div back to the normal style if the conditions are not met.
+
+The way that I fixed the errors were, with the help of my family full of developers, by creating a function that will get the element that is equal to 1, element that is equal to 20 and an element that gets the highest number by looping through the provided array.
+Then creating a for of loop and a if else inside said for loop, that will change the border and background according the logic that is givin in the if statement. Also remembering to change the style of the div back to normal if the conditions are not met.
 
 # Deployment
 [Back To Top](#quacks-coin-divider) <br>
