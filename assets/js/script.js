@@ -210,11 +210,10 @@ function playerRollView() {
         for (player of playerArray) {
             let bgC = (num == 20) ? "green-back" : "";
             let bgRed = (num == 1) ? "red-border" : "";
-            // let bgGreen = (inputs[i].id) ? "green-back" : "";
             let plr = JSON.parse(player);
     
             div.innerHTML += `
-            <div class="row player-colomn rl-stl ${bgC} ${bgRed}" id="roll-style-${plr.name}">
+            <div class="row player-colomn rl-stl ${bgC} ${bgRed}" id="roll-style-${plr.name}" name="loop-style">
                 <div class="col-4">
                     <h2 style="float: left; margin: auto;">${plr.name}</h2>
                 </div>
@@ -234,6 +233,7 @@ function playerRollView() {
     }
 
     document.getElementById('roll-section').appendChild(div);
+    //this.setBorder(id, num);
     this.highestNum();
 }
 
@@ -248,8 +248,7 @@ function rollDie(id) {
     //console.log("The Id is: " + id);
     el.value = num;
 
-    this.setBorder(id, num);
-
+    //this.setBorder(id, num);
     this.highestNum();
 
 }
@@ -258,36 +257,75 @@ function rollDie(id) {
 function setBorder(id, num) {
     el = document.getElementById('roll-style-'+id);
     if (el && num == 1) {
-        el.style.border = '2px solid red'
-        el.style.backgroundColor = 'white';
+        el.style.boxShadow = '0px 0px 15px 5px #FF0000'
+        el.style.background = 'linear-gradient(180deg, rgba(255,0,0,1) 0%, rgba(7,7,7,1) 100%);';
     } else if (el && num == 20) {
-        el.style.border = 'none';
-        el.style.backgroundColor = 'green';
+        el.style.border = '0px 0px 15px 5px #1BFF04';
+        el.style.background = 'linear-gradient(180deg, rgba(20,255,0,1) 0%, rgba(7,7,7,1) 100%);';
     } else if (el) {
+        el.style.boxShadow = 'none';
+        el.style.background = 'none';
         el.style.border = 'none';
         el.style.backgroundColor = 'white';
     }
 
+    this.highestNum();
 }
 
 function highestNum() {
     let high = 0;
-    let id = "";
+    let idHighest = "";
+    let id1 = "";
+    let id20 = "";
     let inputs = document.getElementsByName('rolled');
 
     for (let i = 0; i < inputs.length; i++) {
-        //console.log('now testing ' + inputs[i].id);
-        if (+inputs[i].value > high) {
+        let val = +inputs[i].value;
+        if (val > high) {
             //console.log(`higher value found ${inputs[i].value} for id ${inputs[i].id}`)
             high = +inputs[i].value;
-            id = inputs[i].id;
+            idHighest = inputs[i].id;
+        }
+        if (val == 1) {
+            id1 = inputs[i].id;
+        }
+        if (val == 20) {
+            id20 = inputs[i].id;
         }
     }
-    id = 'roll-style' + id.substring(id.indexOf('-'), id.length);
-    //console.log('id is ' + id);
-    el = document.getElementById(id);
-    if(el) {
-        el.style.border = "2px solid green";
+
+    id1 = 'roll-style' + id1.substring(id1.indexOf('-'), id1.length);
+    id20 = 'roll-style' + id20.substring(id20.indexOf('-'), id20.length);
+    idHighest = 'roll-style' + idHighest.substring(idHighest.indexOf('-'), idHighest.length);
+
+    console.log('idH is ' + idHighest);
+    console.log('id1 is ' + id1);
+    console.log('id20 is ' + id20);
+    //el = document.getElementById(idHighest);
+
+    let myArr = document.getElementsByName('loop-style');
+    
+    for (let divEl of myArr) {
+        let val = divEl.id;
+
+        if (val == id1) {
+            divEl.style.boxShadow = '0px 0px 15px 5px #FF0000';
+            divEl.style.background = 'linear-gradient(180deg, rgba(255,0,0,1) 0%, rgba(7,7,7,1) 100%)';
+        }
+        else if (val == id20) {
+            divEl.style.boxShadow = '0px 0px 15px 5px #1BFF04';
+            divEl.style.background = 'linear-gradient(180deg, rgba(20,255,0,1) 0%, rgba(7,7,7,1) 100%)';
+        }
+        else if (val == idHighest) {
+            divEl.style.boxShadow = '0px 0px 15px 5px #1BFF04';
+            divEl.style.background = 'none';
+            divEl.style.backgroundColor = 'white';
+        }
+        else {
+            divEl.style.boxShadow = 'none';
+            divEl.style.background = 'none';
+            divEl.style.backgroundColor = 'white';
+        }
     }
     //console.log('This is the Id: ' + id + ' with value ' + high);   
 }
