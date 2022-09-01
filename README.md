@@ -346,7 +346,9 @@ On this page, the user will have to insert the total coins that was collected in
   <br>
 
  ![Calculation Page](assets/images/calculate-finish.png)
- ![Calculation Video](assets/videos/calculate-finish-vid.mp4)
+ https://user-images.githubusercontent.com/61915614/187947626-598948cb-fd3f-40ef-ab7b-b04e2388212d.mp4
+
+
 </details>
 
 <details>
@@ -357,7 +359,9 @@ This page will allow the user to roll a die 20 for each of the players that was 
   <br>
 
   ![Player Roll Image](assets/images/player-roll-finish.png)
-  ![Player Roll Video](assets/videos/player-roll-vid.mp4)
+  https://user-images.githubusercontent.com/61915614/187947760-acc57a96-70b8-4a37-8423-b1c3af604fbc.mp4
+
+
 </details>
 
 
