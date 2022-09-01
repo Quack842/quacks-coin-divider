@@ -63,12 +63,12 @@ The point of this application is to make it easier for players to divide the cur
 
 ## Color Scheme
 
-The Main Colors that were chosen for this application was based off of the colors you'd see on the [D&D Beyond](https://www.dndbeyond.com/) website. This website is a very popular website for dungeons and dragons geeks. The Red and Dark Gray (almost black) idea came from the D&D website, the gold color felt like it was the best fit for the Red and black colors.
+The Main Colors that were chosen for this application was based off of the colors you'd see on the [D&D Beyond](https://www.dndbeyond.com/) website. This website is a very popular website for dungeons and dragons geeks. The Red and Dark Gray (almost black) idea came from the D&D website, the gold color felt like it was the best fit for the Red and black colors. <br>
 <img src="assets/images/color-1.png" width="200px" alt="Red Color">
 <img src="assets/images/color-2.png" width="200px" alt="Black Color"> 
 <img src="assets/images/color-3.png" width="200px" alt="Gold Color">
 
-For the page where the user can roll for the remaining coins, if the a player get a nat 20 (natural 20), the background will change to a bright green color.
+For the page where the user can roll for the remaining coins, if the a player get a nat 20 (natural 20), the background will change to a bright green color. <br>
 <img src="assets/images/color-5.png" width="200px" alt="Green Color">
 
 ## Typography
