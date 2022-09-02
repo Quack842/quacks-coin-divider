@@ -327,8 +327,13 @@ However, when the application was tested on a Huawei P20 Chrome Browser, the bug
  ![Huawei P20 screenshot](assets/images/HuaweiP20-test.png)
 </details>
 <br>
-This brought me to the conclusion that the styling is different for the iPhone browsers.
+This brought me to the conclusion that the styling is different for the iPhone browsers. I fixed this bug by adding a media query to the screen size. If the browser is a certain mobile size, the padding will be removed so the numbers will fit perfectly in the col.
 
+<details>
+    <summary>iPhone 12 Pro Screenshot - Fixed</summary>
+
+ ![Ihpone 12 Pro Fixed](assets/images/iPhone12Pro-fixed.png)
+</details>
 
 # Deployment
 [Back To Top](#quacks-coin-divider) <br>
