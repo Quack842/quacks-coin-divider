@@ -209,7 +209,7 @@ function playerRollView() {
                 <div class="col-4">
                     <h2 style="float: left; margin: auto;">${plr.name}</h2>
                 </div>
-                <div class="col-4" style="font-family: 'Eagle Lake', sans-serif;">
+                <div class="col-4 mid-col" style="font-family: 'Eagle Lake', sans-serif;">
                 <input type="text" id="rolled-${plr.name}" class="rolled" name="rolled" disabled value="${num}" /></div>
                 <div class="col-4">
                     <button onclick="rollDie('${plr.name}')">

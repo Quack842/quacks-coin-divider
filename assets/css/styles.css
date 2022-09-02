@@ -235,4 +235,7 @@ div .red-border {
     font-size: 20px;
     color: #030000;
   }
+  .mid-col {
+    padding: 0 !important;
+  }
 }
