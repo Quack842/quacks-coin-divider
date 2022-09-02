@@ -299,11 +299,36 @@ The Lighthouse feature on Chrome DevTools was used to test the Accessibility of 
 ## Bugs and Fixes
 
 There were a few small errors that was easily fixed. <br>
+### Highest Number Error
+
 Only at the end when I implemented the feature that highlight the player that rolled the highest number, player that rolled a 1 and the player that rolled a 20. It was difficult to write the code in such a way that if the user press the Generate button again, that the previous player with the highest number is not highlighted anymore and the new player is highlighted. Unfortunalty I did not document the error itself, but the evidance of my frustration is logged in the git commits.
 <br>
 
 The way that I fixed the errors were, with the help of my family full of developers, by creating a function that will get the element that is equal to 1, element that is equal to 20 and an element that gets the highest number by looping through the provided array.
-Then creating a for of loop and a if else inside said for loop, that will change the border and background according the logic that is givin in the if statement. Also remembering to change the style of the div back to normal if the conditions are not met.
+Then creating a <em>for of</em> loop and an <em>if else</em> inside said <em>for</em> loop, that will change the border and background according the logic that is givin in the if statement. Also remembering to change the style of the div back to normal if the conditions are not met.
+<br>
+
+### Iphone Safari Browser Error
+
+After I have pushed my project to Github, I tested the Application on my phone's browser (Safari) and saw that on the Player Roll page, the numbers does not fit in the middle col. At first I wasn't sure if it was the responsiveness or the browser, so I tested this by testing the application on two different phones and browsers. <br>
+On Both the <b>Iphone 12 Pro</b> <em>Safari</em> Browser and <b>Iphone 13</b> <em>Safari</em> Browser. On the Iphone 13, we also tested it on a Chrome Browser, the same bug appeard on both browsers.
+<details>
+    <summary>Screenshots of Iphone Bug</summary>
+
+ ![Iphone 12 Pro Bug](assets/images/iphone12Pro-test.png)
+ ![Iphone 12 Pro Landscape Bug](assets/images/iphone12Pro-landscape-test.png)
+</details>
+<br>
+However, when the application was tested on a Huawei P20 Chrome Browser, the bug did not appear.
+
+<details>
+    <summary>Huawei P20 Screenshot</summary>
+
+ ![Huawei P20 screenshot](assets/images/HuaweiP20-test.png)
+</details>
+<br>
+This brought me to the conclusion that the styling is different for the iPhone browsers.
+
 
 # Deployment
 [Back To Top](#quacks-coin-divider) <br>
