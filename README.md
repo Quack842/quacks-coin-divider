@@ -375,7 +375,11 @@ Player Page
 On the Players page, the user will be able to add as many players as they want by clicking the 'Add player' button, and also be able to remove the players.
   <br>
 
- ![Players Page](assets/images/player-finish.png)
+![Players Page](assets/images/player-finish.png)
+ 
+https://user-images.githubusercontent.com/61915614/188113042-76017345-a0f2-4e48-867b-bc81f4cc1f12.mp4
+ 
+ 
 </details>
 
 <details>
