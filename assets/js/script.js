@@ -1,4 +1,5 @@
 var playerArray = [];
+var lastPlayerAdded = 0;
 var numRoll = [];
 let form = document.getElementById('form-submit');
 
@@ -10,24 +11,25 @@ form.addEventListener('submit', handleSubmit);
 
 // Script to add players when button is clicked.
 function addPlayer() {
-    let nm = playerArray.length.toString();
+    let nm = lastPlayerAdded.toString();
     let p = {
-        id: 'player-name' + nm,
+        id: 'player-name_' + nm,
         name: ''
     };
 
     playerArray.push(JSON.stringify(p));
+    lastPlayerAdded++;
 
     let div = document.createElement('div');
 
     div.innerHTML = `
-    <div class="row player-colomn" id="player-colomns" name="player-colomns">
+    <div class="row player-colomn" id="player-colomns_${nm}" name="player-colomns">
         <div class="col-4" style="text-align: left;">
-            <h2><input id="player-name${nm}" type="text" placeholder="Player Name" class="player-edit" name="player-input" onfocusout="setName('player-name${nm}', this.value)" required></h2>
+            <h2><input id="player-name_${nm}" type="text" placeholder="Player Name" class="player-edit" name="player-input" onfocusout="setName('player-name_${nm}', this.value)" required></h2>
         </div>
         <div class="col-4"></div>
         <div class="col-4" style="text-align: right;">
-            <button class="player-edit" id="button-${nm}" onclick="deletePlayer('player-name${nm}')"><i class="fa-solid fa-trash-can"></i></button>
+            <button class="player-edit" id="button-${nm}" onclick="deletePlayer('player-name_${nm}')"><i class="fa-solid fa-trash-can"></i></button>
         </div>
     </div>`;
 
@@ -36,6 +38,8 @@ function addPlayer() {
 
 // Removes player when delete icon is clicked.
 function deletePlayer(id) {
+    const splitArray = id.split("_");
+    //Get the input box element
     let element = document.getElementById(id);
     if (element) {
         let v = element.value;
@@ -46,8 +50,7 @@ function deletePlayer(id) {
             playerArray.splice(ind, 1);
         }
 
-        let del = document.getElementsByName('player-colomns');
-        del[ind].remove();
+        document.getElementById('player-colomns_'+splitArray[1]).remove();
     }
 }
 
@@ -180,6 +183,7 @@ function setName(id, value) {
             playerArray.splice(i, 1, nameVal);
         }
     }
+    console.log("array is: " + playerArray);
 }
 
 // Creates and shows the players that was entered.
@@ -205,14 +209,14 @@ function playerRollView() {
             let plr = JSON.parse(player);
     
             div.innerHTML += `
-            <div class="row player-colomn rl-stl ${bgC} ${bgRed}" id="roll-style-${plr.name}" name="loop-style">
+            <div class="row player-colomn rl-stl ${bgC} ${bgRed}" id="roll-style-${plr.id}" name="loop-style">
                 <div class="col-4">
                     <h2 style="float: left; margin: auto;">${plr.name}</h2>
                 </div>
                 <div class="col-4 mid-col" style="font-family: 'Eagle Lake', sans-serif;">
-                <input type="text" id="rolled-${plr.name}" class="rolled" name="rolled" disabled value="${num}" /></div>
+                <input type="text" id="rolled-${plr.id}" class="rolled" name="rolled" disabled value="${num}" /></div>
                 <div class="col-4">
-                    <button onclick="rollDie('${plr.name}')">
+                    <button onclick="rollDie('${plr.id}')">
                         <img src="assets/images/dice20.png" class="die-image">
                     </button>
                 </div>

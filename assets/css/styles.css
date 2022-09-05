@@ -91,7 +91,7 @@ body .card-header {
 }
 
 /* Player Page */
-#player-colomns {
+.player-colomn {
     background-color: #fff;
     border-radius: 10px;
     padding: 5px;
