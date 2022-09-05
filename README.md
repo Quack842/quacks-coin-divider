@@ -34,8 +34,12 @@ The Application can be viewed live by [clicking on this link!](https://quack842.
     * [Validating The Code](#validating-the-code)
     * [Accessibility](#accessibility)
     * [Bugs And Fixes](#bugs-and-fixes)
+        - [Highest Number Error](#highest-number-error---fixed)
+        - [iPhone Browser Error](#iphone-browser-error---fixed)
+        - [Duplicate User Error](#duplicate-users-error---fixed)
 5. [Deployment](#deployment)
-6. [End Product](#end-product)
+6. [Credits](#credits)
+7. [End Product](#end-product)
 
 # User Experience (UX)
 [Back To Top](#quacks-coin-divider) <br>
@@ -299,7 +303,7 @@ The Lighthouse feature on Chrome DevTools was used to test the Accessibility of 
 ## Bugs and Fixes
 
 There were a few small errors that was easily fixed. <br>
-### Highest Number Error
+### Highest Number Error - Fixed
 
 Only at the end when I implemented the feature that highlight the player that rolled the highest number, player that rolled a 1 and the player that rolled a 20. It was difficult to write the code in such a way that if the user press the Generate button again, that the previous player with the highest number is not highlighted anymore and the new player is highlighted. Unfortunalty I did not document the error itself, but the evidance of my frustration is logged in the git commits.
 <br>
@@ -308,7 +312,9 @@ The way that I fixed the errors were, with the help of my family full of develop
 Then creating a <em>for of</em> loop and an <em>if else</em> inside said <em>for</em> loop, that will change the border and background according the logic that is givin in the if statement. Also remembering to change the style of the div back to normal if the conditions are not met.
 <br>
 
-### Iphone Safari Browser Error
+-----
+
+### Iphone Browser Error - Fixed
 
 After I have pushed my project to Github, I tested the Application on my phone's browser (Safari) and saw that on the Player Roll page, the numbers does not fit in the middle col. At first I wasn't sure if it was the responsiveness or the browser, so I tested this by testing the application on two different phones and browsers. <br>
 On Both the <b>Iphone 12 Pro</b> <em>Safari</em> Browser and <b>Iphone 13</b> <em>Safari</em> Browser. On the Iphone 13, we also tested it on a Chrome Browser, the same bug appeard on both browsers.
@@ -332,8 +338,27 @@ This brought me to the conclusion that the styling is different for the iPhone b
 <details>
     <summary>iPhone 12 Pro Screenshot - Fixed</summary>
 
- ![Ihpone 12 Pro Fixed](assets/images/iPhone12Pro-fixed.png)
+ ![iPhone 12 Pro Fixed](assets/images/iPhone12Pro-fixed.png)
 </details>
+
+-----
+
+### Duplicate Users Error - Fixed
+
+After I 'finished' the project and posted the link on Slack to get some feedback, one user <em>Wozza_5P</em> enlightened me on a few errors that I didn't catch. I was informed that when you add and remove a few users with the same name, it causes a few errors:
+
+<details>
+    <summary>Users Added Error Screenshots</summary>
+
+ ![Duplicate Add](assets/images/duplicate-add.png)
+ ![Error When Add](assets/images/error-remove.png)
+ ![Duplicate error Calculate](assets/images/duplicate-error-calculate.png)
+ ![Duplicate error Roll](assets/images/duplicate-error-roll.png)
+ ![Duplicate error Console Log](assets/images/duplicate-id-console.png)
+
+</details>
+<br>
+After inspecting the bugs and adding console.logs, I came to the conclusion that the bugs was caused because when the player was first removed and then added, the id of the new added player was duplicated and not properly removed. A global var was added and the value was set to 0, and an increment was added to said var under the addPlayer Function. This ensured that there would not be a duplicate created even if the user added players with the same value. There was also variable added to the div colomns to ensure that the entire colomns and id was removed properly.
 
 # Deployment
 [Back To Top](#quacks-coin-divider) <br>
@@ -355,6 +380,10 @@ The following steps was taking to Deploy the website via Github:
     * Select the "main" branch and select the "Save" button.
     * Now a link has been generated for the Live Website.
 <br>
+
+# Credits
+
+I would like to thank my family for helping me with some of the errors and understand why the errors accured and how to fix them. A big thanks to the fellow Slack community that helped me catch the errors and bugs I have not noticed at first.
 
 # End Product
 [Back To Top](#quacks-coin-divider) <br>
