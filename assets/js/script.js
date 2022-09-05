@@ -7,7 +7,9 @@ let form = document.getElementById('form-submit');
 function handleSubmit(event) { 
     event.preventDefault(); 
 }
-form.addEventListener('submit', handleSubmit);
+if(form) {
+    form.addEventListener('submit', handleSubmit);
+}
 
 // Script to add players when button is clicked.
 function addPlayer() {
