@@ -13,7 +13,7 @@ You can read the full Wikipedia information [Here](https://en.wikipedia.org/wiki
 ## Why "Quack's Coin Divider"?
 
 What's with the name? <br>
-I like to believe that I'm an avid gamer, and in all the games a play, my username (Gamer's Tag) is always 'Quack', and I thought that because I'm creating the site that involves gaming... It only seemed fitting. Also, because the application is designed to divide the entered coins, that's where the 'coin divider' part of the name comes in.
+I like to believe that I'm an avid gamer, and in all the games I play, my username (Gamer's Tag) is always 'Quack', and I thought that because I'm creating the site that involves gaming... It only seemed fitting. Also, because the application is designed to divide the entered coins, that's where the 'coin divider' part of the name comes in.
 
 The Application can be viewed live by [clicking on this link!](https://quack842.github.io/quacks-coin-divider/)
 
