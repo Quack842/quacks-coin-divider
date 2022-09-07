@@ -139,7 +139,7 @@ There is also a short discription on what each of the colors mean.
    
 ![Add Player Button](assets/images/add-player-button.png) <br>
 ![Edit Name](assets/images/players-blocks.png) <br>
-![Back and NExt Buttons](assets/images/back-next-button.png) <br>
+![Back and Next Buttons](assets/images/back-next-button.png) <br>
 </details>     
 <details>
     <summary>Calculations Page - Coins Input</summary>
@@ -158,7 +158,7 @@ There is also a short discription on what each of the colors mean.
 </details>     
 <details>
     <summary>Roll Page - Generating Rolls</summary>
-    When the user click on the Generate button, the players that was entered on the Player page, will appear and a number between 1 and 20 will be displayed by each players name. 
+    When the user click on the Generate button, the players that was entered on the Player page, will appear and a number between 1 and 20 will be          displayed by each players name. 
     <br>
     If a player rolls a 1, The background and border will turn red because typically rolling a 1 in D&D is very bad, but a green border will still be displayed on the player that rolled the highest.
     <br>
@@ -169,7 +169,7 @@ There is also a short discription on what each of the colors mean.
     The generating function is desinged in such a way that will insure that there are no repeats of numbers. In Real life if all 5 players roll a die 20, there will be a chance that some players might roll the same number, and will have to roll again to see who wins. This function will prevent that.
     <br>
     <br>
-    At the very bottom of the page, there will be 2 buttons. One for going back a page (the 'Back' Button) and the other one is to reset and go back to the very beginning of the aapplication (the 'Reset Everything' button).
+    At the very bottom of the page, there will be 2 buttons. One for going back a page (the 'Back' Button) and the other one is to reset and go back to the very beginning of the application (the 'Reset Everything' button).
     
 ![Before Roll Generate](assets/images/generate-roll-before.png) <br>
 ![Roll Generated](assets/images/roll-generated.png) <br>
@@ -383,7 +383,7 @@ The following steps was taking to Deploy the website via Github:
 
 # Credits
 
-I would like to thank my family for helping me with some of the errors and understand why the errors accured and how to fix them. A big thanks to the fellow Slack community that helped me catch the errors and bugs I have not noticed at first.
+I would like to thank my family for helping me with some of the errors and helped me understand why the errors accured and how to fix them. A big thanks to the fellow Slack community that helped me catch the errors and bugs I have not noticed at first.
 
 # End Product
 [Back To Top](#quacks-coin-divider) <br>
