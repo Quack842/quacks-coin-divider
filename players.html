@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,93 +10,102 @@
     <link rel="stylesheet" href="assets/css/styles.css">
 
     <script src="https://kit.fontawesome.com/a8fb30ffb7.js" crossorigin="anonymous"></script>
-    
+
     <title>Quack's Coin Divider</title>
 </head>
+
 <body class="container">
     <div id="playerSection">
 
-    <div class="top-div">
-        <h1 class="main-header">How Many Players Are There?</h1>
-        <br>
-        <button class="start-button" id="player" onclick="addPlayer()">Add Player</button>
-        <p style="color: white;">Click on Player Name to edit name</p>
-    </div>
-    <br>
-    <!-- First Section of Discription -->
-    <form id="form-submit">
-    <div id="player-list">
-
-    </div>
-    <br>
-    <div class="button-section">
-        <button class="start-button" onclick="history.back()">Back</button>
-        <button class="start-button" type="submit" id="btn-submit" onclick="submitInput()">Next</button>
-    </div>
-    </form>
-    <br>
-    </div>
-    <!-- Second Section Viewed When Next Clicked-->
-    <div id="calculateSection" style="display: none;">
-
         <div class="top-div">
-            <h1 class="main-header">What is The total amount of coins?</h1>
-            <h4 class="sub-header">Insert the total amount of coins you looted from the monster/creatures.</h4>
+            <h1 class="main-header">How Many Players Are There?</h1>
+            <br>
+            <button class="start-button" id="player" onclick="addPlayer()">Add Player</button>
+            <p style="color: white;">Click on Player Name to edit name</p>
         </div>
         <br>
         <!-- First Section of Discription -->
+        <form id="form-submit">
+            <div class="alert alert-danger" id="player-alert" style="display: none;" role="alert">
+                Aww, Don't have more friends then that? <br> Please add at least 2 players... Even if they are pretend.
+              </div>
+              <div class="alert alert-danger" id="player-alert-2" style="display: none;" role="alert">
+                  Only 1 Friend?? Just add a 'fake' second friend... <br> Please add AT LEAST 2 players.
+                </div>
+            <div id="player-list" >
+
+            </div>
+            <br>
+            <div class="button-section">
+                <button class="start-button" onclick="history.back()">Back</button>
+                <button class="start-button" type="submit" id="btn-submit" onclick="submitInput()">Next</button>
+            </div>
+        </form>
+        <br>
+    </div>
+    <form id="form-loot">
+        <!-- Second Section Viewed When Next Clicked-->
+        <div id="calculateSection" style="display: none;">
+            <div class="top-div">
+                <h1 class="main-header">What is The total amount of coins?</h1>
+                <h4 class="sub-header">Insert the total amount of coins you looted from the monster/creatures.</h4>
+            </div>
+            <br>
+            <!-- First Section of Discription -->
+            <div class="row">
+                <!-- Platinum -->
+                <div class="col">
+                    <label for="platinum" style="color:#cacaca ;">Platinum</label>
+                    <img style="width: 15px;" src="assets/images/platinum.png" alt="platinum coin"> <br>
+                    <input class="input-style" name="loot" type="number" id="platinum" value="0" onClick="this.select();" required min="0">
+                </div>
+                <!-- Electrum -->
+                <div class="col">
+                    <label for="electrum" style="color:#cacaca ;">Electrum</label>
+                    <img style="width: 15px;" src="assets/images/electrum.png" alt="electrum coin"> <br>
+                    <input class="input-style" name="loot" type="number" id="electrum" value="0" onClick="this.select();"required min="0">
+                </div>
+                <!-- Gold -->
+                <div class="col">
+                    <label for="gold" style="color:#cacaca ;">Gold</label>
+                    <img style="width: 15px;" src="assets/images/gold.png" alt="gold coin"> <br>
+                    <input class="input-style" name="loot" type="number" id="gold" value="0" onClick="this.select();"required min="0">
+                </div>
+                <!-- Silver -->
+                <div class="col">
+                    <label for="silver" style="color:#cacaca ;">Silver</label>
+                    <img style="width: 15px;" src="assets/images/silver.png" alt="silver coin"> <br>
+                    <input class="input-style" name="loot" type="number" id="silver" value="0" onClick="this.select();"required min="0">
+                </div>
+                <!-- Copper -->
+                <div class="col">
+                    <label for="copper" style="color:#cacaca ;">Copper</label>
+                    <img style="width: 15px;" src="assets/images/copper.png" alt="copper coin"> <br>
+                    <input class="input-style" name="loot" type="number" id="copper" value="0" onClick="this.select();"required min="0">
+                </div>
+            </div>
+    </form>
+    <button class="start-button" id="calculate" onclick="calculateTotal()">Calculate</button>
+    <br>
+    <h1 class="main-header">Divided Coins Bewteen Players</h1>
+    <hr>
+    <!-- Table With Divided amongst Players -->
+    <div id="users-values">
+
+    </div>
+    <!-- Undivided Section -->
+    <div>
+        <div class="top-div">
+            <h1 class="main-header">Undivided Coins</h1>
+            <h4 class="sub-header" style="color: #cacaca;">You can either put the remaining amount in a kitty or the
+                players can roll for the remaining coins.</h4>
+            <br>
+        </div>
+
         <div class="row">
             <!-- Platinum -->
             <div class="col">
-                <label for="platinum" style="color:#cacaca ;">Platinum</label> 
-                <img style="width: 15px;" src="assets/images/platinum.png" alt="platinum coin"> <br>
-                <input class="input-style" type="number" id="platinum" value="0" onClick="this.select();">
-            </div>
-            <!-- Electrum -->
-            <div class="col">
-                <label for="electrum" style="color:#cacaca ;">Electrum</label>
-                <img style="width: 15px;" src="assets/images/electrum.png" alt="electrum coin"> <br>
-                <input class="input-style" type="number" id="electrum" value="0" onClick="this.select();">
-            </div>
-            <!-- Gold -->
-            <div class="col">
-                <label for="gold" style="color:#cacaca ;">Gold</label>
-                <img style="width: 15px;" src="assets/images/gold.png" alt="gold coin"> <br>
-                <input class="input-style" type="number" id="gold" value="0" onClick="this.select();">
-            </div>
-            <!-- Silver -->
-            <div class="col">
-                <label for="silver" style="color:#cacaca ;">Silver</label>
-                <img style="width: 15px;" src="assets/images/silver.png" alt="silver coin"> <br>
-                <input class="input-style" type="number" id="silver" value="0" onClick="this.select();">
-            </div>
-            <!-- Copper -->
-            <div class="col">
-                <label for="copper" style="color:#cacaca ;">Copper</label> 
-                <img style="width: 15px;" src="assets/images/copper.png" alt="copper coin"> <br>
-                <input class="input-style" type="number" id="copper" value="0" onClick="this.select();">
-            </div>
-        </div>
-        <button class="start-button" id="calculate" onclick="calculateTotal()">Calculate</button>
-        <br>
-        <h1 class="main-header">Divided Coins Bewteen Players</h1>
-        <hr>
-        <!-- Table With Divided amongst Players -->
-        <div id="users-values">
-    
-        </div>
-        <!-- Undivided Section -->
-        <div>
-            <div class="top-div">
-                <h1 class="main-header">Undivided Coins</h1>
-                <h4 class="sub-header" style="color: #cacaca;">You can either put the remaining amount in a kitty or the players can roll for the remaining coins.</h4>
-                <br>
-            </div>
-    
-            <div class="row">
-            <!-- Platinum -->
-            <div class="col">
-                <label for="platinum" style="color:#cacaca ;">Platinum</label> 
+                <label for="platinum" style="color:#cacaca ;">Platinum</label>
                 <img style="width: 15px; margin: 10px;" src="assets/images/platinum.png" alt="platinum coin"> <br>
                 <div id="platinumOver"></div>
             </div>
@@ -119,16 +129,16 @@
             </div>
             <!-- Copper -->
             <div class="col">
-                <label for="copper" style="color:#cacaca ;">Copper</label> 
+                <label for="copper" style="color:#cacaca ;">Copper</label>
                 <img style="width: 15px; margin: 10px;" src="assets/images/copper.png" alt="copper coin"> <br>
                 <div id="copperOver"></div>
             </div>
-            </div>
         </div>
-        <div class="button-section">
-            <button class="start-button" onclick="backPlayer()">Back</button>
-            <button class="start-button" onclick="submitRollInput()">Click to Roll Digitally</button>
-        </div>
+    </div>
+    <div class="button-section">
+        <button class="start-button" onclick="backPlayer()">Back</button>
+        <button class="start-button" onclick="submitRollInput()">Click to Roll Digitally</button>
+    </div>
     </div>
 
     <!-- Third Section Viewed When Next Clicked-->
@@ -141,7 +151,7 @@
         <hr>
         <!-- First Section of Roll -->
         <div id="roll-section">
-            
+
         </div>
         <br>
         <!-- Explains What the colors means -->
@@ -149,17 +159,20 @@
             <div class="col">
                 <!-- Explains what The Green border only means -->
                 <div id="green-brd-explain"></div> <br>
-                <span style="color: #cacaca;">If the border is only green, this means that the person got the highest number</span>
+                <span style="color: #cacaca;">If the border is only green, this means that the person got the highest
+                    number</span>
             </div>
             <div class="col">
                 <!-- Explains what The Red border only means -->
                 <div id="red-brd-explain"></div> <br>
-                <span style="color: #cacaca;">If the border and background is red, this means that the person rolled a nat 1 which is the worst you can roll</span>
+                <span style="color: #cacaca;">If the border and background is red, this means that the person rolled a
+                    nat 1 which is the worst you can roll</span>
             </div>
             <div class="col">
                 <!-- Explains what The Green background only means -->
                 <div id="green-back-explain"></div> <br>
-                <span style="color: #cacaca;">If the border and background is green, this means that the person rolled a nat 20, This is the best roll you can get</span>
+                <span style="color: #cacaca;">If the border and background is green, this means that the person rolled a
+                    nat 20, This is the best roll you can get</span>
             </div>
         </div>
         <div class="button-section">
@@ -172,4 +185,5 @@
     <!-- Script File Link -->
     <script src="assets/js/script.js"></script>
 </body>
+
 </html>

@@ -2,17 +2,26 @@ var playerArray = [];
 var lastPlayerAdded = 0;
 var numRoll = [];
 let form = document.getElementById('form-submit');
+let formLoot = document.getElementById('form-loot');
 
-// Prevent form from refreshing page after submit
-function handleSubmit(event) { 
-    event.preventDefault(); 
+// Prevent forms from refreshing page after submit
+function handleSubmit(event) {
+    event.preventDefault();
 }
-if(form) {
+
+if (form) {
     form.addEventListener('submit', handleSubmit);
 }
 
+if (formLoot) {
+    formLoot.addEventListener('submit', handleSubmit);
+}
+
+
 // Script to add players when button is clicked.
 function addPlayer() {
+    document.getElementById("player-alert").style.display = "none";
+    document.getElementById("player-alert-2").style.display = "none";
     let nm = lastPlayerAdded.toString();
     let p = {
         id: 'player-name_' + nm,
@@ -52,17 +61,32 @@ function deletePlayer(id) {
             playerArray.splice(ind, 1);
         }
 
-        document.getElementById('player-colomns_'+splitArray[1]).remove();
+        document.getElementById('player-colomns_' + splitArray[1]).remove();
     }
 }
 
 // Changes screen view to second section and removes first sections view and Pushes the entered Value to array
 function submitInput() {
+
     let playerInputs = document.getElementsByName('player-input');
     let valCheck = true;
     
+    const alertPlayer = document.getElementById("player-alert");
+    const alertPlayerSecond = document.getElementById("player-alert-2");
+    if(playerInputs.length < 1) {
+        alertPlayer.style.display = "block";
+        return;
+    } 
+    else if (playerInputs.length == 1) {
+        alertPlayerSecond.style.display = "block";
+        return;
+    } 
+    else {
+        alertPlayer.style.display = "none";
+    }
+
     for (let i = 0; i < playerInputs.length; i++) {
-        if(!playerInputs[i].checkValidity()){
+        if (!playerInputs[i].checkValidity()) {
             valCheck = false;
             break;
         }
@@ -70,7 +94,7 @@ function submitInput() {
     if (!valCheck) {
         return;
     }
-    
+
     document.getElementById("calculateSection").style.display = "block";
     document.getElementById("playerSection").style.display = "none";
     document.getElementById("playerRollSection").style.display = "none";
@@ -85,7 +109,7 @@ function submitRollInput() {
     let div = document.getElementById("rolled-results");
     if (div) {
         div.innerHTML = '';
-    } 
+    }
 }
 
 function backPlayer() {
@@ -102,6 +126,20 @@ function backRollPlayer() {
 
 // Creates The Table When Clicked On Calculate
 function calculateTotal() {
+
+    const lootDivided = document.getElementById('users-values');
+    lootDivided.innerHTML = "";
+    
+    let valid = true;
+    const loot = document.getElementsByName("loot");
+    for (let inpEl of loot) {
+        if (!inpEl.checkValidity()) {
+            valid = false;
+        }
+    }
+
+    if (!valid) return;
+
     let platinumInput = parseInt(document.getElementById('platinum').value);
     let electrumInput = parseInt(document.getElementById('electrum').value);
     let goldInput = parseInt(document.getElementById('gold').value);
@@ -128,11 +166,11 @@ function calculateTotal() {
     </thead>
     <tbody>`;
 
-    if (playerArray ){
-    for (let player of playerArray) {
-        let plr = JSON.parse(player);
+    if (playerArray) {
+        for (let player of playerArray) {
+            let plr = JSON.parse(player);
 
-        let rowHtml = `
+            let rowHtml = `
         <tr>
             <td>${plr.name}</td>
             <td id="platinum-input">${Math.floor(platinumInput / playerArray.length)}</td>
@@ -142,15 +180,15 @@ function calculateTotal() {
             <td id="copper-input">${Math.floor(copperInput / playerArray.length)}</td>
         </tr>
     `;
-    html += rowHtml;
+            html += rowHtml;
+        }
     }
-}
     html += `
     </tbody>
     </table>
     `;
 
-    document.getElementById('users-values').innerHTML = html;
+    lootDivided.innerHTML = html;
 
     //Calculates the Remainder
     let platinumRemain = platinumInput % playerArray.length;
@@ -185,7 +223,6 @@ function setName(id, value) {
             playerArray.splice(i, 1, nameVal);
         }
     }
-    console.log("array is: " + playerArray);
 }
 
 // Creates and shows the players that was entered.
@@ -195,10 +232,9 @@ function playerRollView() {
     numRoll = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"];
     let num = numRoll[Math.floor(Math.random() * numRoll.length)];
     numRoll.splice(numRoll.indexOf(num), 1);
-    //console.log("Array length: " + numRoll.length);
 
     let div = document.getElementById('rolled-results');
-    if(!div) {
+    if (!div) {
         div = document.createElement('div');
         div.id = 'rolled-results';
     }
@@ -209,7 +245,7 @@ function playerRollView() {
             let bgC = (num == 20) ? "green-back" : "";
             let bgRed = (num == 1) ? "red-border" : "";
             let plr = JSON.parse(player);
-    
+
             div.innerHTML += `
             <div class="row player-colomn rl-stl ${bgC} ${bgRed}" id="roll-style-${plr.id}" name="loop-style">
                 <div class="col-4">
@@ -223,7 +259,7 @@ function playerRollView() {
                     </button>
                 </div>
             </div>`;
-            
+
             num = numRoll[Math.floor(Math.random() * numRoll.length)];
             numRoll.splice(numRoll.indexOf(num), 1);
 
@@ -237,7 +273,7 @@ function playerRollView() {
 // If a player wants to reroll
 function rollDie(id) {
 
-    let el = document.getElementById('rolled-'+id);
+    let el = document.getElementById('rolled-' + id);
     let curr = el.value;
     let num = numRoll[Math.floor(Math.random() * numRoll.length)];
     // Current Number will replace the number that was pulled so the user does not run out of numbers
@@ -275,29 +311,22 @@ function highestNum() {
     id20 = 'roll-style' + id20.substring(id20.indexOf('-'), id20.length);
     idHighest = 'roll-style' + idHighest.substring(idHighest.indexOf('-'), idHighest.length);
 
-    console.log('idH is ' + idHighest);
-    console.log('id1 is ' + id1);
-    console.log('id20 is ' + id20);
-
     let myArr = document.getElementsByName('loop-style');
-    
+
     for (let divEl of myArr) {
         let val = divEl.id;
 
         if (val == id1) {
             divEl.style.boxShadow = '0px 0px 15px 5px #FF0000';
             divEl.style.background = 'linear-gradient(180deg, rgba(255,0,0,1) 0%, rgba(7,7,7,1) 100%)';
-        }
-        else if (val == id20) {
+        } else if (val == id20) {
             divEl.style.boxShadow = '0px 0px 15px 5px #1BFF04';
             divEl.style.background = 'linear-gradient(180deg, rgba(20,255,0,1) 0%, rgba(7,7,7,1) 100%)';
-        }
-        else if (val == idHighest) {
+        } else if (val == idHighest) {
             divEl.style.boxShadow = '0px 0px 15px 5px #1BFF04';
             divEl.style.background = 'none';
             divEl.style.backgroundColor = 'white';
-        }
-        else {
+        } else {
             divEl.style.boxShadow = 'none';
             divEl.style.background = 'none';
             divEl.style.backgroundColor = 'white';

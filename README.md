@@ -228,6 +228,9 @@ I used this website to help understand some of the Javascript functions.
 * [CSS Button Generator](https://css3buttongenerator.com/) <br>
 This website was usefull for designing the button and getting the code.
 
+* [CSS Animation Generator](https://www.theappguruz.com/tag-tools/web/CSSAnimations/) <br>
+This website was usefull for generating animation that was used for the Main Image
+
 # Testing
 [Back To Top](#quacks-coin-divider) <br>
 [Back To Table Of Contents](#table-of-contents) <br>
@@ -392,9 +395,11 @@ I would like to thank my family for helping me with some of the errors and helpe
 <summary>
 Landing Page
 </summary>
- The landing page is where the purpose of the application is explained as well as more information about Dungeons and Dragons in card form. It has a simple design and on the landing page is a image of the Dungeons and Dragons Logo.  <br>
+ The landing page is where the purpose of the application is explained as well as more information about Dungeons and Dragons in card form. It has a simple design and on the landing page is a image of the Dungeons and Dragons Logo that will have a Zoom In Down Animation as the page load.  <br>
+There is also a gif of a ducky (that I created) that will walk across the screen.
 
  ![Landing Page](assets/images/landing-page-finish.png)
+ ![Landing Page](assets/images/walking-ducky.png)
 </details>
 
 <details>
